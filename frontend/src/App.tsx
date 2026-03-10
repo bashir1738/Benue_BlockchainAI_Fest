@@ -1,30 +1,33 @@
-import Header from './components/Header'
-import Footer from './components/Footer'
-import Hero from './components/Hero'
-import Showcase from './components/Showcase'
-import EventStructure from './components/EventStructure'
-import KeyHighlights from './components/KeyHighlights'
-import CallToAction from './components/CallToAction'
-import FestBanner from './components/FestBanner'
-import About from './components/About'
-import RegistrationCards from './components/RegistrationCards'
-
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Home from './pages/Home'
+import Register from './pages/Register'
+import Apply from './pages/Apply'
+import AdminLogin from './pages/admin/AdminLogin'
+import AdminLayout from './pages/admin/AdminLayout'
+import AdminDashboard from './pages/admin/AdminDashboard'
+import AdminRegistrations from './pages/admin/AdminRegistrations'
+import AdminHackathon from './pages/admin/AdminHackathon'
+import AdminShowcase from './pages/admin/AdminShowcase'
+import AdminSpeaker from './pages/admin/AdminSpeaker'
 
 export default function App() {
   return (
-    <div className="min-h-screen flex flex-col bg-secondary font-sans text-gray-900">
-      <Header />
-      <main className="grow flex flex-col">
-        <Hero />
-        <Showcase />
-        <EventStructure />
-        <KeyHighlights />
-        <CallToAction />
-        <FestBanner />
-        <About />
-        <RegistrationCards />
-      </main>
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/apply" element={<Apply />} />
+
+        {/* Admin Routes */}
+        <Route path="/admin/login" element={<AdminLogin />} />
+        <Route path="/admin" element={<AdminLayout />}>
+          <Route index element={<AdminDashboard />} />
+          <Route path="registrations" element={<AdminRegistrations />} />
+          <Route path="hackathon" element={<AdminHackathon />} />
+          <Route path="showcase" element={<AdminShowcase />} />
+          <Route path="speaker" element={<AdminSpeaker />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   )
 }

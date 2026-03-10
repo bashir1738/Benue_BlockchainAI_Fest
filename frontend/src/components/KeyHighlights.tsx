@@ -2,7 +2,7 @@ import Reveal from './Reveal'
 
 export default function KeyHighlights() {
     return (
-        <section className="bg-background pb-16 md:pb-24 pt-4 md:pt-12 relative overflow-hidden">
+        <section id="highlights" className="bg-background pb-16 md:pb-24 pt-4 md:pt-12 relative overflow-hidden">
 
             {/* FAINT VERTICAL BACKGROUND LINES (Continued from EventStructure) */}
             <div className="absolute inset-0 pointer-events-none flex justify-between px-10 md:px-20 opacity-5 sm:opacity-10">
@@ -29,16 +29,7 @@ export default function KeyHighlights() {
                                 </p>
                             </div>
 
-                            {/* SVG GRAPHIC */}
-                            <div className="hidden md:flex w-1/2 justify-center lg:justify-start items-center mt-4 lg:-ml-10 pt-4">
-                                <div className="w-64 md:w-80 lg:w-[450px] relative">
-                                    <img
-                                        src="/Union.svg"
-                                        alt="Puzzle shape"
-                                        className="w-full object-contain"
-                                    />
-                                </div>
-                            </div>
+
                         </div>
                     </Reveal>
 

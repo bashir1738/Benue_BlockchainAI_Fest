@@ -1,50 +1,55 @@
 import { FaXTwitter, FaFacebookF } from 'react-icons/fa6'
 import { FaTelegramPlane } from 'react-icons/fa'
+import { Link } from 'react-router-dom'
 
 export default function Footer() {
     return (
-        <footer className="bg-white py-12 mt-auto">
-            <div className="container mx-auto flex flex-col items-center px-4">
+        <footer className="bg-secondary pt-24 pb-12 mt-auto border-t border-white/5 relative overflow-hidden">
 
-                {/* LOGO SECTION */}
-                <div className="flex flex-col items-center mb-6 text-center">
-                    <h2 className="text-4xl sm:text-5xl md:text-7xl font-black text-gray-300 uppercase tracking-tighter leading-none font-mono">
-                        Benue Blockchain <br className="md:hidden" /> AI Fest
-                    </h2>
-                    <p className="text-gray-300 font-mono text-sm md:text-lg mt-3 md:mt-1 tracking-widest">
-                        {'{Technology Conference}'}
+            <div className="container mx-auto px-4 sm:px-6 lg:px-12 w-full max-w-7xl relative z-10">
+
+                {/* TOP HEADER / BRANDING BLOCK */}
+                <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-20 gap-10">
+                    <div className="flex flex-col">
+                        <Link to="/" className="group cursor-pointer mb-6">
+                            <h2 className="text-3xl md:text-5xl font-black text-white tracking-tighter leading-none mb-2 transition-colors duration-300">
+                                BENUE FEST <span className="text-primary group-hover:text-white transition-colors duration-300">2025</span>
+                            </h2>
+                            <p className="text-primary/70 font-mono text-xs uppercase tracking-widest group-hover:text-primary transition-colors duration-300">
+                                {'{ BLOCKCHAIN & AI CONFERENCE }'}
+                            </p>
+                        </Link>
+                        <p className="text-white/60 text-lg font-light leading-relaxed max-w-md">
+                            Join us at the inaugural Benue Blockchain AI Fest. Building the next billion users through groundbreaking technology.
+                        </p>
+                    </div>
+
+                    {/* SOCIALS */}
+                    <div className="flex items-center gap-4">
+                        <a href="#" className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white/50 hover:border-primary hover:text-primary hover:bg-primary/10 transition-all duration-300">
+                            <FaXTwitter className="text-lg" />
+                        </a>
+                        <a href="#" className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white/50 hover:border-primary hover:text-primary hover:bg-primary/10 transition-all duration-300">
+                            <FaFacebookF className="text-lg" />
+                        </a>
+                        <a href="#" className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white/50 hover:border-primary hover:text-primary hover:bg-primary/10 transition-all duration-300">
+                            <FaTelegramPlane className="text-lg -ml-1 mt-0.5" />
+                        </a>
+                    </div>
+                </div>
+
+                {/* BOTTOM LINKS & COPYRIGHT */}
+                <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/10 gap-6">
+                    <p className="text-white/40 text-sm font-light">
+                        © {new Date().getFullYear()} Benue Blockchain AI Fest. All rights reserved.
                     </p>
+                    <div className="flex items-center gap-6">
+                        <a href="/#about" className="text-white/40 hover:text-primary text-sm font-medium transition-colors">About</a>
+                        <a href="/#expect" className="text-white/40 hover:text-primary text-sm font-medium transition-colors">Schedule</a>
+                        <Link to="/register" className="text-white/40 hover:text-primary text-sm font-medium transition-colors">Register</Link>
+                    </div>
                 </div>
 
-                {/* HEADER / BODY TEXT */}
-                <p className="font-mono text-center text-gray-800 text-sm md:text-base max-w-2xl mb-8 leading-relaxed px-2">
-                    Join us at the inaugural Benue Blockchain AI Fest as we showcase innovation in<br className="hidden md:block" /> Blockchain and AI technology
-                </p>
-
-                {/* DIVIDER */}
-                <div className="w-full max-w-3xl border-t border-gray-100 mb-8"></div>
-
-                {/* SOCIAL ICONS */}
-                <div className="flex items-center space-x-12">
-                    <a
-                        href="#"
-                        className="bg-black text-white w-12 h-12 rounded-full flex flex-col justify-center items-center hover:bg-gray-800 transition-colors"
-                    >
-                        <FaXTwitter className="text-xl" />
-                    </a>
-                    <a
-                        href="#"
-                        className="bg-black text-white w-12 h-12 rounded-full flex flex-col justify-center items-center hover:bg-gray-800 transition-colors"
-                    >
-                        <FaFacebookF className="text-xl" />
-                    </a>
-                    <a
-                        href="#"
-                        className="bg-black text-white w-12 h-12 rounded-full flex flex-col justify-center items-center hover:bg-gray-800 transition-colors"
-                    >
-                        <FaTelegramPlane className="text-xl -ml-1 mt-1" />
-                    </a>
-                </div>
             </div>
         </footer>
     )

@@ -1,31 +1,117 @@
-export default function Header() {
-    return (
-        <header className="bg-secondary text-white py-4 px-4 md:px-20 top-0 z-50 ">
-            <div className="container mx-auto flex flex-col lg:flex-row justify-center lg:justify-between items-center">
+import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
+import { FaBars, FaTimes } from 'react-icons/fa'
 
-                {/* LOGO */}
-                <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
-                    <h1 className="text-xl font-mono md:text-2xl lg:text-3xl font-black text-primary uppercase tracking-tighter leading-none ">
-                        Benue Blockchain <br className="lg:hidden" /> AI Fest
-                    </h1>
-                    <p className="text-primary font-mono text-xs md:text-sm mt-1 tracking-widest">
-                        {'{Technology Conference}'}
-                    </p>
+export default function Header() {
+    const [isScrolled, setIsScrolled] = useState(false)
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 20)
+        }
+        window.addEventListener('scroll', handleScroll)
+        return () => window.removeEventListener('scroll', handleScroll)
+    }, [])
+
+    const navLinks = [
+        { name: 'About', path: '/#about' },
+        { name: 'What to expect', path: '/#expect' },
+        { name: 'Location', path: '/#location' },
+        { name: 'Key highlights', path: '/#highlights' },
+    ]
+
+    return (
+        <header
+            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-4 md:px-8 
+            ${isScrolled || mobileMenuOpen ? 'py-3' : 'py-5'}`}
+        >
+            <div className={`mx-auto max-w-7xl transition-all duration-500 overflow-hidden border border-white/5 bg-secondary/80 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.3)]
+                ${mobileMenuOpen ? 'rounded-3xl' : 'rounded-2xl md:rounded-full'}
+                `}>
+                <div className="flex items-center justify-between px-6 py-3 relative z-10">
+                    {/* LOGO */}
+                    <Link to="/" onClick={() => setMobileMenuOpen(false)} className="flex flex-col group relative z-50 shrink-0">
+                        <h1 className="text-lg md:text-xl font-mono font-black text-white tracking-tighter leading-none transition-colors">
+                            BENUE
+                            <span className="text-primary transition-colors ml-1">FEST</span>
+                        </h1>
+                        <p className="text-primary/70 font-mono text-[10px] uppercase tracking-[0.2em] mt-0.5">
+                            Blockchain AI
+                        </p>
+                    </Link>
+
+                    {/* DESKTOP NAV (PILL SHAPE) */}
+                    <nav className="hidden lg:flex items-center gap-1 bg-white/5 rounded-full px-2 py-1.5 border border-white/5 mx-4">
+                        {navLinks.map((link) => (
+                            <a
+                                key={link.name}
+                                href={link.path}
+                                className="px-5 py-2 rounded-full text-sm font-medium text-gray-300 hover:text-primary hover:bg-white/10 transition-all duration-200 whitespace-nowrap"
+                            >
+                                {link.name}
+                            </a>
+                        ))}
+                    </nav>
+
+                    {/* CTA BUTTONS */}
+                    <div className="hidden lg:flex items-center gap-5 shrink-0">
+                        <Link
+                            to="/apply"
+                            className="text-sm font-medium text-gray-300 hover:text-white transition-colors relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left"
+                        >
+                            Apply Now
+                        </Link>
+                        <Link
+                            to="/register"
+                            className="relative group overflow-hidden bg-primary/10 border border-primary text-primary font-bold py-2.5 px-7 rounded-full text-sm transition-all duration-300 hover:shadow-[0_0_20px_rgba(56,189,248,0.4)]"
+                        >
+                            <span className="relative z-10 group-hover:text-secondary transition-colors duration-300">Register</span>
+                            <div className="absolute inset-0 h-full w-full bg-primary scale-x-0 origin-left transition-transform duration-300 ease-out group-hover:scale-x-100 mix-blend-normal"></div>
+                        </Link>
+                    </div>
+
+                    {/* MOBILE MENU BUTTON */}
+                    <button
+                        className="lg:hidden text-white text-2xl p-2 relative z-50 focus:outline-none"
+                        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                    >
+                        {mobileMenuOpen ? <FaTimes /> : <FaBars />}
+                    </button>
                 </div>
 
-                {/* DESKTOP NAV */}
-                <nav className="hidden lg:flex space-x-8 items-center text-sm font-medium">
-                    <a href="#about" className="hover:text-primary transition-colors">About</a>
-                    <a href="#expect" className="hover:text-primary transition-colors">What to expect</a>
-                    <a href="#location" className="hover:text-primary transition-colors">Location</a>
-                    <a href="#highlights" className="hover:text-primary transition-colors">Key highlights</a>
-                </nav>
-
-                {/* CTA BUTTON (DESKTOP) */}
-                <div className="hidden lg:block">
-                    <a href="#apply" className="bg-primary text-white font-semibold py-2.5 px-6 rounded-md text-sm hover:opacity-90 transition-opacity">
-                        Apply Now
-                    </a>
+                {/* IN-HEADER EXPANDING MOBILE MENU */}
+                <div
+                    className={`lg:hidden transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] ${mobileMenuOpen ? 'max-h-[500px] opacity-100 pb-6' : 'max-h-0 opacity-0 pointer-events-none'
+                        }`}
+                >
+                    <nav className="flex flex-col gap-5 px-6 pt-4">
+                        {navLinks.map((link) => (
+                            <a
+                                key={link.name}
+                                href={link.path}
+                                onClick={() => setMobileMenuOpen(false)}
+                                className="text-lg font-medium text-gray-300 hover:text-primary transition-colors"
+                            >
+                                {link.name}
+                            </a>
+                        ))}
+                        <div className="h-px w-full bg-white/10 my-1"></div>
+                        <Link
+                            to="/apply"
+                            onClick={() => setMobileMenuOpen(false)}
+                            className="text-lg font-medium text-gray-300 hover:text-white transition-colors"
+                        >
+                            Apply to Speak / Showcase
+                        </Link>
+                        <Link
+                            to="/register"
+                            onClick={() => setMobileMenuOpen(false)}
+                            className="bg-primary hover:bg-white text-secondary font-bold py-3.5 px-6 rounded-xl text-center shadow-lg transition-all duration-300 inline-block mt-2 font-mono"
+                        >
+                            Secure Ticket
+                        </Link>
+                    </nav>
                 </div>
             </div>
         </header>
