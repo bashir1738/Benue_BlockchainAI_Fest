@@ -1,4 +1,28 @@
-# React + TypeScript + Vite
+# Benue Blockchain AI Fest 2025 - Frontend
+
+This is the frontend repository for the Benue Blockchain AI Fest 2025 website.
+
+## Requirements and Installation
+
+This project strictly uses `pnpm` as the package manager. **Do not use `npm` or `yarn`** to avoid breaking the lockfile and dependency tree.
+
+### 1. Install Dependencies
+Run the following command to install all required dependencies:
+
+```bash
+pnpm install
+```
+
+### 2. Start the Development Server
+To launch the local development environment:
+
+```bash
+pnpm run dev
+```
+
+---
+
+## React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
