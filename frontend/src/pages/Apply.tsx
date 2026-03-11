@@ -21,6 +21,7 @@ export default function Apply() {
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault()
         setStatus('success')
+        window.scrollTo(0, 0)
     }
 
     return (
@@ -52,7 +53,7 @@ export default function Apply() {
                                 </div>
                                 <h3 className="text-3xl font-medium text-gray-900 mb-4 tracking-tight">Application Received!</h3>
                                 <p className="text-gray-500 text-lg mb-10 font-light leading-relaxed">Our team will review your submission and get back to you shortly with next steps.</p>
-                                <button onClick={() => setStatus('')} className="bg-white text-gray-900 border border-gray-200 hover:border-primary hover:text-primary font-medium py-3 px-8 rounded-xl transition-all duration-300">
+                                <button onClick={() => { setStatus(''); window.scrollTo(0, 0); }} className="bg-white text-gray-900 border border-gray-200 hover:border-primary hover:text-primary font-medium py-3 px-8 rounded-xl transition-all duration-300">
                                     Submit Another
                                 </button>
                             </div>
@@ -129,7 +130,9 @@ export default function Apply() {
                                     )}
 
                                     <div>
-                                        <label className="block text-gray-700 font-medium mb-2 text-sm">Tell us more details</label>
+                                        <label className="block text-gray-700 font-medium mb-2 text-sm">
+                                            {applyType === 'speaker' ? 'Tell us more about your expertise' : 'Tell us more about your project'}
+                                        </label>
                                         <textarea required rows={5} className="w-full bg-gray-50 border border-gray-200 rounded-xl px-5 py-4 focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-all text-gray-900 resize-none" placeholder="Share a few specifics..."></textarea>
                                     </div>
 

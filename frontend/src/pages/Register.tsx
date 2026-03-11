@@ -11,6 +11,7 @@ export default function Register() {
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault()
         setStatus('success')
+        window.scrollTo(0, 0)
     }
 
     return (
@@ -45,7 +46,7 @@ export default function Register() {
                                 </div>
                                 <h3 className="text-3xl font-medium text-gray-900 mb-4 tracking-tight">You're on the list!</h3>
                                 <p className="text-gray-500 text-lg mb-10 font-light leading-relaxed">Check your email for your ticket confirmation and further details about the event.</p>
-                                <button onClick={() => setStatus('')} className="bg-white text-gray-900 border border-gray-200 hover:border-primary hover:text-primary font-medium py-3 px-8 rounded-xl transition-all duration-300">
+                                <button onClick={() => { setStatus(''); window.scrollTo(0, 0); }} className="bg-white text-gray-900 border border-gray-200 hover:border-primary hover:text-primary font-medium py-3 px-8 rounded-xl transition-all duration-300">
                                     Register Another
                                 </button>
                             </div>
