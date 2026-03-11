@@ -12,9 +12,9 @@ export default function FestBanner() {
 
                 {/* Large Subtle Letters/Shapes */}
                 <div className="absolute -top-20 -left-10 text-[600px] font-black leading-none text-primary opacity-30 blur-[2px]">B</div>
-                <div className="absolute bottom-[-100px] right-[10%] text-[400px] font-black leading-none text-secondary opacity-20 rotate-12">F</div>
+                <div className="absolute bottom-25 right-[10%] text-[400px] font-black leading-none text-secondary opacity-20 rotate-12">F</div>
 
-                <div className="absolute top-1/4 right-[5%] w-[500px] h-[500px] bg-background rounded-[80px] rotate-25 opacity-50 mix-blend-color-burn blur-xs"></div>
+                <div className="absolute top-1/4 right-[5%] w-125 h-125 bg-background rounded-[80px] rotate-25 opacity-50 mix-blend-color-burn blur-xs"></div>
 
                 {/* Geometrical Square/Rect blocks matching the reference */}
                 <div className="absolute top-[10%] left-[45%] w-32 h-32 bg-primary rounded-3xl opacity-70"></div>
@@ -24,15 +24,15 @@ export default function FestBanner() {
                 <div className="absolute top-[60%] left-[10%] w-24 h-48 bg-secondary rounded-r-3xl opacity-50"></div>
 
                 {/* Large Wavy Dark Overlay */}
-                <svg className="absolute top-1/2 left-0 w-[200%] md:w-[150%] h-auto min-w-[1400px] -translate-y-1/2 text-secondary opacity-70 mix-blend-multiply" viewBox="0 0 1440 320" preserveAspectRatio="none">
+                <svg className="absolute top-1/2 left-0 w-[200%] md:w-[150%] h-auto min-w-350 -translate-y-1/2 text-secondary opacity-70 mix-blend-multiply" viewBox="0 0 1440 320" preserveAspectRatio="none">
                     <path fill="currentColor" fillOpacity="1" d="M0,160L48,149.3C96,139,192,117,288,138.7C384,160,480,224,576,213.3C672,203,768,117,864,101.3C960,85,1056,139,1152,176C1248,213,1344,235,1392,245.3L1440,256L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
                     <path fill="currentColor" fillOpacity="0.6" d="M0,256L48,240C96,224,192,192,288,181.3C384,171,480,181,576,197.3C672,213,768,235,864,218.7C960,203,1056,149,1152,122.7C1248,96,1344,96,1392,96L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
                 </svg>
 
                 {/* Solid 'T' Shape on Bottom Right */}
                 <div className="absolute -bottom-2 right-[8%] flex flex-col items-center opacity-90 z-10">
-                    <div className="w-[180px] h-[50px] md:h-[70px] bg-primary rounded-t-lg"></div>
-                    <div className="w-[40px] md:w-[60px] h-[250px] bg-primary"></div>
+                    <div className="w-45 h-12.5 md:h-17.5 bg-primary rounded-t-lg"></div>
+                    <div className="w-10 md:w-15 h-62.5 bg-primary"></div>
                 </div>
             </div>
 

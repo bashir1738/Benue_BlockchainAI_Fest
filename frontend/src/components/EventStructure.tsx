@@ -22,12 +22,10 @@ export default function EventStructure() {
                 <Reveal>
                     <div className="mb-16 md:mb-24 max-w-2xl">
                         <h2 className="text-4xl md:text-5xl lg:text-[54px] font-medium text-primary leading-tight mb-6">
-                            Event Structure
+                            What to Expect in Benue
                         </h2>
                         <p className="text-white text-sm md:text-xl leading-relaxed font-light mt-6">
-                            This event merges a high-impact Hackathon, a premier product
-                            showcase, creating an ecosystem where emerging talent
-                            meets real-world blockchain applications and network.
+                            Benue Blockchain AI Fest combines a rigorous 3-day hackathon, industry-leading tech conference, and cultural immersion. Connect with 500+ builders, meet 20+ Web3 & AI companies, and experience the heart of Nigeria's innovation ecosystem.
                         </p>
                     </div>
                 </Reveal>
@@ -36,7 +34,7 @@ export default function EventStructure() {
                 <div className="relative">
 
                     {/* VERTICAL LINE CONNECTION */}
-                    <div className="absolute left-[15px] sm:left-[19px] md:left-[23px] top-6 bottom-16 w-px bg-primary/40 hidden sm:block"></div>
+                    <div className="absolute left-3.75 sm:left-4.75 md:left-5.75 top-6 bottom-16 w-px bg-primary/40 hidden sm:block"></div>
 
                     {/* TIMELINE ITEM 1 */}
                     <Reveal delay={150}>
@@ -51,14 +49,14 @@ export default function EventStructure() {
 
                             {/* CARD */}
                             <div className="bg-secondary rounded-2xl md:rounded-3xl p-4 md:p-6 w-full md:flex-1 shadow-lg ml-auto sm:ml-0">
-                                <h3 className="text-2xl md:text-3xl font-medium text-primary mb-4 md:mb-6">Hackathon</h3>
+                                <h3 className="text-2xl md:text-3xl font-medium text-primary mb-4 md:mb-6">72-Hour Hackathon</h3>
                                 <p className="text-white text-lg md:text-lg leading-relaxed mb-6 font-light">
-                                    The Hackathon 'Dare to Build' will bring together Web3 and AI developers to work on challenges centred around DeFi, ReFi, DePINs, RWA tokenisation, NFTs, DAOs, and other decentralised AI applications.
+                                    'Dare to Build' - Our flagship hackathon unites 700+ Web3 and AI developers in non-stop innovation. Tackle real-world challenges in DeFi, ReFi, DePINs, RWA tokenisation, NFTs, DAOs, and decentralised AI. Build, compete, and showcase your breakthrough ideas.
                                 </p>
                                 <ul className="flex flex-wrap gap-y-4 gap-x-8">
-                                    <li className="text-white text-lg sm:text-lg flex items-center gap-2.5 font-light"><div className="w-1 h-1 bg-white rounded-full"></div> Innovation & Development</li>
-                                    <li className="text-white text-lg sm:text-lg flex items-center gap-2.5 font-light"><div className="w-1 h-1 bg-white rounded-full"></div> Product Showcase</li>
-                                    <li className="text-white text-lg sm:text-lg flex items-center gap-2.5 font-light"><div className="w-1 h-1 bg-white rounded-full"></div> Networking & Collaboration</li>
+                                    <li className="text-white text-lg sm:text-lg flex items-center gap-2.5 font-light"><div className="w-1 h-1 bg-white rounded-full"></div> 72 hours of non-stop building</li>
+                                    <li className="text-white text-lg sm:text-lg flex items-center gap-2.5 font-light"><div className="w-1 h-1 bg-white rounded-full"></div> Live mentorship & technical support</li>
+                                    <li className="text-white text-lg sm:text-lg flex items-center gap-2.5 font-light"><div className="w-1 h-1 bg-white rounded-full"></div> Prize pools & investor pitching</li>
                                 </ul>
                             </div>
 
@@ -78,16 +76,16 @@ export default function EventStructure() {
 
                             {/* CARD */}
                             <div className="bg-secondary rounded-2xl md:rounded-3xl p-4 md:p-6 w-full md:flex-1 shadow-lg ml-auto sm:ml-0">
-                                <h3 className="text-2xl md:text-3xl font-medium text-primary mb-4 md:mb-6">Conference</h3>
+                                <h3 className="text-2xl md:text-3xl font-medium text-primary mb-4 md:mb-6">Tech Conference Summit</h3>
                                 <p className="text-white text-lg md:text-lg leading-relaxed mb-6 font-light">
-                                    The Summit is a curated 2-day conference and product showcase designed to highlight groundbreaking Web3 and AI applications built by startups, independent builders, and teams from the Benue Blockchain AI Fest community and the wider ecosystem.
+                                    The 2-day summit brings together 20+ leading Web3 & AI companies, industry experts, and 700+ developers. Discover cutting-edge products, connect with founders and VCs, attend technical deep-dives, and explore partnership opportunities with Africa's most innovative ecosystem.
                                 </p>
                                 <ul className="flex flex-wrap gap-y-4 gap-x-8">
-                                    <li className="text-white text-lg sm:text-lg flex items-center gap-2.5 font-light"><div className="w-1 h-1 bg-white rounded-full"></div> Product exhibition</li>
-                                    <li className="text-white text-lg sm:text-lg flex items-center gap-2.5 font-light"><div className="w-1 h-1 bg-white rounded-full"></div> Fireside chats</li>
-                                    <li className="text-white text-lg sm:text-lg flex items-center gap-2.5 font-light"><div className="w-1 h-1 bg-white rounded-full"></div> Technical workshops</li>
-                                    <li className="text-white text-lg sm:text-lg flex items-center gap-2.5 font-light"><div className="w-1 h-1 bg-white rounded-full"></div> Panel discussions</li>
-                                    <li className="text-white text-lg sm:text-lg flex items-center gap-2.5 font-light"><div className="w-1 h-1 bg-white rounded-full"></div> Strategic partnerships, mentorship and funding.</li>
+                                    <li className="text-white text-lg sm:text-lg flex items-center gap-2.5 font-light"><div className="w-1 h-1 bg-white rounded-full"></div> Product exhibitions & demos</li>
+                                    <li className="text-white text-lg sm:text-lg flex items-center gap-2.5 font-light"><div className="w-1 h-1 bg-white rounded-full"></div> Industry fireside chats & keynotes</li>
+                                    <li className="text-white text-lg sm:text-lg flex items-center gap-2.5 font-light"><div className="w-1 h-1 bg-white rounded-full"></div> Technical workshops & bootcamps</li>
+                                    <li className="text-white text-lg sm:text-lg flex items-center gap-2.5 font-light"><div className="w-1 h-1 bg-white rounded-full"></div> Investor pitch & funding rounds</li>
+                                    <li className="text-white text-lg sm:text-lg flex items-center gap-2.5 font-light"><div className="w-1 h-1 bg-white rounded-full"></div> Strategic partnerships & mentorship</li>
                                 </ul>
                             </div>
 
@@ -107,15 +105,15 @@ export default function EventStructure() {
 
                             {/* CARD */}
                             <div className="bg-secondary rounded-2xl md:rounded-3xl p-4 md:p-6 w-full md:flex-1 shadow-lg ml-auto sm:ml-0">
-                                <h3 className="text-2xl md:text-3xl font-medium text-primary mb-4 md:mb-6">The Adventure</h3>
+                                <h3 className="text-2xl md:text-3xl font-medium text-primary mb-4 md:mb-6">Benue Experience</h3>
                                 <p className="text-white text-lg md:text-lg leading-relaxed mb-6 font-light">
-                                    As a renowned tourism state, Benue offers the perfect backdrop for attendees to unwind and immerse themselves in local culture and natural attractions. This curated experience includes a guided tour, and an authentic Afrobeats Afterparty.
+                                    Celebrate your achievements while experiencing the warmth and culture of Nigeria. Benue, the 'Food Basket of Nigeria,' offers a unique blend of history, natural beauty, and vibrant community. Unwind with fellow innovators in an unforgettable cultural experience.
                                 </p>
                                 <ul className="flex flex-wrap gap-y-4 gap-x-8">
-                                    <li className="text-white text-lg sm:text-lg flex items-center gap-2.5 font-light"><div className="w-1 h-1 bg-white rounded-full"></div> Cultural Guided Tour</li>
-                                    <li className="text-white text-lg sm:text-lg flex items-center gap-2.5 font-light"><div className="w-1 h-1 bg-white rounded-full"></div> National Museum Tour</li>
-                                    <li className="text-white text-lg sm:text-lg flex items-center gap-2.5 font-light"><div className="w-1 h-1 bg-white rounded-full"></div> Park Visit</li>
-                                    <li className="text-white text-lg sm:text-lg flex items-center gap-2.5 font-light"><div className="w-1 h-1 bg-white rounded-full"></div> Afrobeats Afterparty</li>
+                                    <li className="text-white text-lg sm:text-lg flex items-center gap-2.5 font-light"><div className="w-1 h-1 bg-white rounded-full"></div> Guided cultural heritage tours</li>
+                                    <li className="text-white text-lg sm:text-lg flex items-center gap-2.5 font-light"><div className="w-1 h-1 bg-white rounded-full"></div> National Museum & historical sites</li>
+                                    <li className="text-white text-lg sm:text-lg flex items-center gap-2.5 font-light"><div className="w-1 h-1 bg-white rounded-full"></div> Nature reserves & scenic parks</li>
+                                    <li className="text-white text-lg sm:text-lg flex items-center gap-2.5 font-light"><div className="w-1 h-1 bg-white rounded-full"></div> Authentic Afrobeats celebration & afterparties</li>
                                 </ul>
                             </div>
 

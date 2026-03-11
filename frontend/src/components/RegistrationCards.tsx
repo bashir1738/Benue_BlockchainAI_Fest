@@ -30,7 +30,7 @@ export default function RegistrationCards() {
                                 <span className="text-gray-300 text-6xl md:text-[100px] font-black opacity-30 group-hover:text-primary group-hover:opacity-10 transition-all duration-500 leading-none">01</span>
                             </div>
 
-                            <div className="relative z-10 flex flex-col h-full min-h-[220px]">
+                            <div className="relative z-10 flex flex-col h-full min-h-55">
                                 <div className="mt-auto">
                                     <h3 className="text-gray-900 text-3xl md:text-4xl lg:text-[42px] font-medium leading-[1.2] mb-8">
                                         Register to<br />Attend Event
@@ -49,7 +49,7 @@ export default function RegistrationCards() {
                                 <span className="text-white text-6xl md:text-[100px] font-black opacity-20 group-hover:opacity-30 transition-all duration-500 leading-none">02</span>
                             </div>
 
-                            <div className="relative z-10 flex flex-col h-full min-h-[220px]">
+                            <div className="relative z-10 flex flex-col h-full min-h-55">
                                 <div className="mt-auto">
                                     <h3 className="text-white text-3xl md:text-4xl lg:text-[42px] font-medium leading-[1.2] mb-8">
                                         Apply for<br />Hackathon

@@ -37,24 +37,24 @@ export default function KeyHighlights() {
                     <Reveal delay={200}>
                         <div className="hidden md:flex flex-row items-center w-full justify-center lg:pr-10 mb-10 overflow-visible relative group/deck">
                             {[
-                                { id: '01', title: 'What is Benue Fest', text: 'Share your expertise, insights, and experiences with the Web3 community. Join our technical workshops and panel discussions.' },
-                                { id: '02', title: 'What to expect at Benue Fest', text: 'Share your expertise, insights, and experiences with the Web3 community. Join our technical workshops and panel discussions.' },
-                                { id: '03', title: 'The Most important web3 Conference', text: 'Share your expertise, insights, and experiences with the Web3 community. Join our technical workshops and panel discussions.' },
-                                { id: '04', title: 'Why Visit Benue', text: 'Share your expertise, insights, and experiences with the Web3 community. Join our technical workshops and panel discussions.' },
+                                { id: '01', title: 'What is Benue Fest', text: 'Africa\'s premier Blockchain & AI festival. An inaugural 3-day celebration of innovation, featuring a non-stop hackathon, industry conference, and immersive cultural experiences in Nigeria\'s historic Benue state.' },
+                                { id: '02', title: 'What to expect at Benue Fest', text: '700+ talented developers, 20+ leading Web3 & AI companies, 72-hour intensive hackathon, keynote speakers, technical workshops, investor pitching rounds, and unparalleled networking opportunities.' },
+                                { id: '03', title: 'The Most important web3 Conference', text: 'World-class 2-day summit featuring product showcases, fireside chats with industry leaders, bootcamps, panel discussions on blockchain & AI, strategic partnerships, mentorship opportunities, and live funding pitches.' },
+                                { id: '04', title: 'Why Visit Benue', text: 'Experience Nigeria\'s unique cultural heritage, natural attractions, and warm hospitality. From guided cultural tours to the National Museum, nature reserves, Benue offers unforgettable memories beyond the conference.', },
                             ].map((card, i) => (
                                 <div
                                     key={i}
                                     className={`
                                             relative bg-primary pb-14 rounded-lg overflow-hidden
                                             shadow-2xl
-                                            w-[360px] lg:w-[460px] xl:w-[570px] 
-                                            h-[300px] lg:h-[360px] xl:h-[340px] shrink-0 
+                                            w-90 lg:w-115 xl:w-142.5 
+                                            h-75 lg:h-90 xl:h-85 shrink-0 
                                             transition-all duration-300 ease-[cubic-bezier(0.25,0.8,0.25,1)]
                                             hover:-translate-y-4 hover:z-50 hover:shadow-[-25px_15px_40px_rgba(0,0,0,0.25)]
-                                            ${i !== 0 ? '-ml-56 lg:-ml-[280px] xl:-ml-[380px]' : ''}
+                                            ${i !== 0 ? '-ml-56 lg:-ml-70 xl:-ml-95' : ''}
                                         `}
                                 >
-                                    <div className="p-8 lg:p-10 xl:p-12 h-full w-[360px] lg:w-[460px] xl:w-[500px] flex flex-col justify-center">
+                                    <div className="p-8 lg:p-10 xl:p-12 h-full w-90 lg:w-115 xl:w-125 flex flex-col justify-center">
                                         <div className="flex items-center gap-4 lg:gap-6 mb-6 mt-2">
                                             <span className="text-background  font-black text-[90px] lg:text-[120px] leading-none shrink-0 tracking-tighter">{card.id}</span>
                                             <h3 className="text-white text-xl lg:text-2xl font-semibold leading-tight whitespace-normal ">{card.title}</h3>
@@ -72,10 +72,10 @@ export default function KeyHighlights() {
                     <Reveal delay={200}>
                         <div className="flex md:hidden flex-col gap-6 w-full mb-10">
                             {[
-                                { id: '01', title: 'What is Benue Fest', text: 'Share your expertise, insights, and experiences with the Web3 community. Join our technical workshops and panel discussions.' },
-                                { id: '02', title: 'What to expect at Benue Fest', text: 'Share your expertise, insights, and experiences with the Web3 community. Join our technical workshops and panel discussions.' },
-                                { id: '03', title: 'The Most important web3 Conference', text: 'Share your expertise, insights, and experiences with the Web3 community. Join our technical workshops and panel discussions.' },
-                                { id: '04', title: 'Why Visit Benue', text: 'Share your expertise, insights, and experiences with the Web3 community. Join our technical workshops and panel discussions.' },
+                                { id: '01', title: 'What is Benue Fest', text: 'Africa\'s premier Blockchain & AI festival. An inaugural 3-day celebration of innovation, featuring a non-stop hackathon, industry conference, and immersive cultural experiences in Nigeria\'s historic Benue state.' },
+                                { id: '02', title: 'What to expect at Benue Fest', text: '700+ talented developers, 20+ leading Web3 & AI companies, 72-hour intensive hackathon, keynote speakers, technical workshops, investor pitching rounds, and unparalleled networking opportunities.' },
+                                { id: '03', title: 'The Most important web3 Conference', text: 'World-class 2-day summit featuring product showcases, fireside chats with industry leaders, bootcamps, panel discussions on blockchain & AI, strategic partnerships, mentorship opportunities, and live funding pitches.' },
+                                { id: '04', title: 'Why Visit Benue', text: 'Experience Nigeria\'s unique cultural heritage, natural attractions, and warm hospitality. From guided cultural tours to the National Museum, nature reserves, Benue offers unforgettable memories beyond the conference.' },
                             ].map((card, i) => (
                                 <div key={i} className="bg-primary rounded-xl p-6 shadow-xl w-full">
                                     <div className="flex items-center gap-4 mb-3">

@@ -36,7 +36,7 @@ export default function AdminHackathon() {
                                     </td>
                                     <td className="px-6 py-4 font-medium">{app.project}</td>
                                     <td className="px-6 py-4 hidden lg:table-cell">
-                                        <a href={app.github} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline text-sm truncate block max-w-[200px]">
+                                        <a href={app.github} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline text-sm truncate block max-w-50">
                                             {app.github}
                                         </a>
                                     </td>

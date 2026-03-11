@@ -34,9 +34,9 @@ export default function AdminSpeaker() {
                                         <p className="font-medium text-gray-900">{app.name}</p>
                                         <p className="text-sm text-gray-500">{app.contact}</p>
                                     </td>
-                                    <td className="px-6 py-4 font-medium max-w-[250px] truncate" title={app.topic}>{app.topic}</td>
+                                    <td className="px-6 py-4 font-medium max-w-62.5 truncate" title={app.topic}>{app.topic}</td>
                                     <td className="px-6 py-4 hidden lg:table-cell">
-                                        <a href={app.link} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline text-sm truncate block max-w-[200px]">
+                                        <a href={app.link} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline text-sm truncate block max-w-50">
                                             {app.link}
                                         </a>
                                     </td>

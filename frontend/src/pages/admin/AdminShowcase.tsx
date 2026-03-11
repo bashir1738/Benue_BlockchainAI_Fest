@@ -36,7 +36,7 @@ export default function AdminShowcase() {
                                     </td>
                                     <td className="px-6 py-4 font-medium">{app.product}</td>
                                     <td className="px-6 py-4 hidden lg:table-cell">
-                                        <a href={app.link} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline text-sm truncate block max-w-[200px]">
+                                        <a href={app.link} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline text-sm truncate block max-w-50">
                                             {app.link}
                                         </a>
                                     </td>
