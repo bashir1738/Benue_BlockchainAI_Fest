@@ -1,4 +1,6 @@
 import { useState, type ChangeEvent, type FormEvent } from 'react'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import Reveal from '../components/Reveal'
@@ -77,7 +79,6 @@ interface FormErrors {
 export default function Register() {
     const [status, setStatus] = useState<'' | 'success'>('')
     const [loading, setLoading] = useState(false)
-    const [error, setError] = useState<string | null>(null)
     const [errors, setErrors] = useState<FormErrors>({})
 
     const [phoneCountry, setPhoneCountry] = useState(countryCodes[0])
@@ -238,9 +239,9 @@ export default function Register() {
 
     const handleSubmit = async (e: FormEvent) => {
         e.preventDefault()
-        setError(null)
         
         if (!validateForm()) {
+            toast.error('Agree to the terms and conditions.')
             return
         }
 
@@ -273,6 +274,7 @@ export default function Register() {
             const data = await response.json()
 
             if (response.ok) {
+                toast.success('🎉 Registration successful! Check your email for confirmation.')
                 setStatus('success')
                 setFormData(initialFormData)
                 setErrors({})
@@ -298,9 +300,7 @@ export default function Register() {
                         else if (lower.includes('country')) backendErrors.country = msg
                     })
 
-                    setErrors(prev => ({ ...prev, ...backendErrors }))
-                    // Show first message in banner as a summary
-                    setError(messages[0] || 'Please correct the highlighted fields.')
+                    toast.error(messages[0] || 'Please correct the highlighted fields.')
                 }
                 // Uniqueness conflicts from backend (email / phone / whatsapp already exist)
                 else if (response.status === 409 && typeof data.message === 'string') {
@@ -312,16 +312,14 @@ export default function Register() {
 
                     if (Object.keys(backendErrors).length > 0) {
                         setErrors(prev => ({ ...prev, ...backendErrors }))
-                        setError(msg)
-                    } else {
-                        setError(msg)
                     }
+                    toast.error(msg)
                 } else {
-                    setError(data.message || 'Registration failed. Please try again.')
+                    toast.error(data.message || 'Registration failed. Please try again.')
                 }
             }
         } catch (_err) {
-            setError('Failed to connect to the server. Is the backend running?')
+            toast.error('❌ Failed to connect to the server. Is the backend running?')
         } finally {
             setLoading(false)
         }
@@ -334,7 +332,13 @@ export default function Register() {
                 const country = countryCodes.find(c => c.code === e.target.value)
                 if (country) onChange(country)
             }}
-            className="bg-gray-100/80 border border-gray-200 rounded-l-xl px-3 py-4 text-sm focus:outline-none focus:ring-2 focus:ring-primary/60 focus:border-primary font-medium text-gray-700 shadow-[inset_0_1px_0_rgba(255,255,255,0.5)] transition-all"
+            className="min-w-fit bg-transparent border-r border-gray-300 px-3 py-4 text-sm focus:outline-none font-medium text-gray-700 transition-all cursor-pointer hover:bg-gray-50/50 appearance-none"
+            style={{
+                backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%234B5563' d='M6 9L1 4h10z'/%3E%3C/svg%3E")`,
+                backgroundRepeat: 'no-repeat',
+                backgroundPosition: 'right 8px center',
+                paddingRight: '24px'
+            }}
         >
             {countryCodes.map(country => (
                 <option key={country.code} value={country.code}>
@@ -347,6 +351,18 @@ export default function Register() {
     return (
         <div className="min-h-screen flex flex-col bg-gray-50 font-sans text-gray-900">
             <Header />
+            <ToastContainer
+                position="top-right"
+                autoClose={4000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+            />
             <main className="grow flex flex-col relative py-20 xl:py-32 overflow-hidden">
 
                 {/* SUBTLE BACKGROUND ACCENT */}
@@ -476,9 +492,9 @@ export default function Register() {
                                     </div>
 
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                        <div>
-                                            <label className="block text-gray-700 font-medium mb-2 text-sm">Phone Number</label>
-                                            <div className="flex">
+                                        <div className="group">
+                                            <label className="block text-gray-700 font-medium mb-3 text-sm">Phone Number</label>
+                                            <div className={`flex rounded-xl overflow-hidden border-2 transition-all duration-300 ${errors.phone ? 'border-red-400 bg-red-50/30' : 'border-gray-200 bg-gray-50 group-focus-within:border-primary group-focus-within:shadow-md group-focus-within:shadow-primary/10'}`}>
                                                 <CountryCodeSelect value={phoneCountry} onChange={setPhoneCountry} />
                                                 <input
                                                     required
@@ -486,15 +502,15 @@ export default function Register() {
                                                     value={formData.phone}
                                                     onChange={handleInputChange}
                                                     type="tel"
-                                                    className={`flex-1 bg-gray-50 border ${errors.phone ? 'border-red-400 focus:border-red-500 focus:ring-red-500' : 'border-gray-200 focus:border-primary focus:ring-primary'} border-l-0 rounded-r-xl px-5 py-4 focus:outline-none focus:ring-1 transition-all text-gray-900`}
-                                                    placeholder="8012345678"
+                                                    className={`flex-1 bg-transparent border-none px-5 py-4 focus:outline-none transition-all text-gray-900 placeholder-gray-400`}
+                                                    placeholder="801 234 5678"
                                                 />
                                             </div>
-                                            {errors.phone && <p className="mt-1 text-sm text-red-600">{errors.phone}</p>}
+                                            {errors.phone && <p className="mt-2 text-sm text-red-600 font-medium">⚠ {errors.phone}</p>}
                                         </div>
-                                        <div>
-                                            <label className="block text-gray-700 font-medium mb-2 text-sm">WhatsApp Number</label>
-                                            <div className="flex">
+                                        <div className="group">
+                                            <label className="block text-gray-700 font-medium mb-3 text-sm">WhatsApp Number</label>
+                                            <div className={`flex rounded-xl overflow-hidden border-2 transition-all duration-300 ${errors.whatsapp ? 'border-red-400 bg-red-50/30' : 'border-gray-200 bg-gray-50 group-focus-within:border-green-500 group-focus-within:shadow-md group-focus-within:shadow-green-500/10'}`}>
                                                 <CountryCodeSelect value={whatsappCountry} onChange={setWhatsappCountry} />
                                                 <input
                                                     required
@@ -502,11 +518,11 @@ export default function Register() {
                                                     value={formData.whatsapp}
                                                     onChange={handleInputChange}
                                                     type="tel"
-                                                    className={`flex-1 bg-gray-50 border ${errors.whatsapp ? 'border-red-400 focus:border-red-500 focus:ring-red-500' : 'border-gray-200 focus:border-primary focus:ring-primary'} border-l-0 rounded-r-xl px-5 py-4 focus:outline-none focus:ring-1 transition-all text-gray-900`}
-                                                    placeholder="8012345678"
+                                                    className={`flex-1 bg-transparent border-none px-5 py-4 focus:outline-none transition-all text-gray-900 placeholder-gray-400`}
+                                                    placeholder="801 234 5678"
                                                 />
                                             </div>
-                                            {errors.whatsapp && <p className="mt-1 text-sm text-red-600">{errors.whatsapp}</p>}
+                                            {errors.whatsapp && <p className="mt-2 text-sm text-red-600 font-medium">⚠ {errors.whatsapp}</p>}
                                         </div>
                                     </div>
 
