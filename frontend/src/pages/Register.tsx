@@ -385,11 +385,7 @@ export default function Register() {
                     </Reveal>
 
                     <Reveal delay={150}>
-                        {error && (
-                            <div className="mb-8 p-4 bg-red-50 border border-red-200 text-red-600 rounded-xl text-center animate-in fade-in slide-in-from-top-2">
-                                {error}
-                            </div>
-                        )}
+                       
                         {status === 'success' ? (
                             <div className="bg-white rounded-4xl p-12 text-center shadow-sm border border-gray-100 max-w-xl mx-auto">
                                 <div className="w-24 h-24 bg-primary/10 text-primary rounded-full flex items-center justify-center mx-auto mb-8">
