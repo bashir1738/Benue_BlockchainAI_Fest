@@ -65,10 +65,16 @@ export default function AdminLayout() {
                 </nav>
 
                 <div className="p-4 border-t border-white/10">
-                    <Link to="/admin/login" className="flex items-center gap-3 px-2 py-2 text-gray-400 hover:text-white transition-colors">
+                    <button 
+                        onClick={() => {
+                            localStorage.removeItem('token')
+                            window.location.href = '/admin/login'
+                        }} 
+                        className="w-full flex items-center gap-3 px-2 py-2 text-gray-400 hover:text-white transition-colors cursor-pointer"
+                    >
                         <FaSignOutAlt />
                         <span className="font-medium text-sm">Logout</span>
-                    </Link>
+                    </button>
                 </div>
             </aside>
 

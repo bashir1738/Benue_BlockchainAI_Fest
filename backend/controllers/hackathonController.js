@@ -55,7 +55,75 @@ async function hackathonRegister(req, res) {
   }
 }
 
-module.exports = { 
-  hackathonRegister
 
+async function getAllHackathonRegistrations(req, res) {
+  try {
+    const page = Math.max(1, parseInt(req.query.page) || 1);
+    const limit = Math.min(100, Math.max(1, parseInt(req.query.limit) || 10));
+    const offset = (page - 1) * limit;
+
+    const { count, rows: registrations } = await HackathonRegistration.findAndCountAll({
+      limit,
+      offset,
+      order: [['createdAt', 'DESC']],
+    });
+
+    const totalPages = Math.ceil(count / limit);
+
+    return res.status(200).json({
+      success: true,
+      data: {
+        registrations,
+        pagination: {
+          total: count,
+          page,
+          limit,
+          totalPages,
+          hasNextPage: page < totalPages,
+          hasPrevPage: page > 1,
+        },
+      },
+    });
+  } catch (err) {
+    console.error('[HackathonController] getAllHackathonRegistrations error:', err);
+    return res.status(500).json({
+      success: false,
+      message: 'Failed to fetch hackathon registrations.',
+    });
+  }
+}
+
+
+async function deleteHackathonRegistration(req, res) {
+  try {
+    const { id } = req.params;
+    const registration = await HackathonRegistration.findByPk(id);
+
+    if (!registration) {
+      return res.status(404).json({
+        success: false,
+        message: `Hackathon registration with ID ${id} not found.`,
+      });
+    }
+
+    await registration.destroy();
+
+    return res.status(200).json({
+      success: true,
+      message: `Hackathon registration with ID ${id} has been successfully deleted.`,
+    });
+  } catch (err) {
+    console.error('[HackathonController] deleteHackathonRegistration error:', err);
+    return res.status(500).json({
+      success: false,
+      message: 'Failed to delete hackathon registration.',
+    });
+  }
+}
+
+
+module.exports = { 
+  hackathonRegister,
+  getAllHackathonRegistrations,
+  deleteHackathonRegistration,
 };

@@ -55,4 +55,75 @@ async function productShowcaseRegister(req, res) {
   }
 }
 
-module.exports = { productShowcaseRegister };
+
+async function getAllProductShowcases(req, res) {
+  try {
+    const page = Math.max(1, parseInt(req.query.page) || 1);
+    const limit = Math.min(100, Math.max(1, parseInt(req.query.limit) || 10));
+    const offset = (page - 1) * limit;
+
+    const { count, rows: showcases } = await ProductShowcase.findAndCountAll({
+      limit,
+      offset,
+      order: [['createdAt', 'DESC']],
+    });
+
+    const totalPages = Math.ceil(count / limit);
+
+    return res.status(200).json({
+      success: true,
+      data: {
+        showcases,
+        pagination: {
+          total: count,
+          page,
+          limit,
+          totalPages,
+          hasNextPage: page < totalPages,
+          hasPrevPage: page > 1,
+        },
+      },
+    });
+  } catch (err) {
+    console.error('[ProductShowcaseController] getAllProductShowcases error:', err);
+    return res.status(500).json({
+      success: false,
+      message: 'Failed to fetch product showcases.',
+    });
+  }
+}
+
+
+async function deleteProductShowcase(req, res) {
+  try {
+    const { id } = req.params;
+    const showcase = await ProductShowcase.findByPk(id);
+
+    if (!showcase) {
+      return res.status(404).json({
+        success: false,
+        message: `Product showcase with ID ${id} not found.`,
+      });
+    }
+
+    await showcase.destroy();
+
+    return res.status(200).json({
+      success: true,
+      message: `Product showcase with ID ${id} has been successfully deleted.`,
+    });
+  } catch (err) {
+    console.error('[ProductShowcaseController] deleteProductShowcase error:', err);
+    return res.status(500).json({
+      success: false,
+      message: 'Failed to delete product showcase.',
+    });
+  }
+}
+
+
+module.exports = { 
+  productShowcaseRegister,
+  getAllProductShowcases,
+  deleteProductShowcase,
+};

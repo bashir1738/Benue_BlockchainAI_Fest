@@ -1,11 +1,15 @@
 const express = require('express');
-const { productShowcaseRegister } = require('../controllers/productShowcaseController');
+const { productShowcaseRegister, getAllProductShowcases, deleteProductShowcase } = require('../controllers/productShowcaseController');
 const { registrationLimiter } = require('../middleware/rateLimiter');
+const authMiddleware = require('../middleware/authMiddleware');
+const adminLogger = require('../middleware/logger');
 
 const router = express.Router();
 
 
-// POST /api/product-showcase/register
 router.post('/register', registrationLimiter, productShowcaseRegister);
+router.get('/registrations', authMiddleware, adminLogger, getAllProductShowcases);
+router.delete('/registrations/:id', authMiddleware, adminLogger, deleteProductShowcase);
+
 
 module.exports = router;
