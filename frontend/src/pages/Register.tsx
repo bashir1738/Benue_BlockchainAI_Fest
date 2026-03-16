@@ -61,6 +61,32 @@ const countryCodes = [
     { code: 'OTHER', name: 'Other', dial: '', flag: '🌍' },
 ]
 
+// Defined OUTSIDE the Register component so React keeps a stable reference.
+// If defined inside, React treats it as a new component type on every render
+// and unmounts/remounts the inputs on every keystroke — breaking focus & Reveal.
+const CountryCodeSelect = ({ value, onChange }: { value: typeof countryCodes[0], onChange: (country: typeof countryCodes[0]) => void }) => (
+    <select
+        value={value.code}
+        onChange={(e) => {
+            const country = countryCodes.find(c => c.code === e.target.value)
+            if (country) onChange(country)
+        }}
+        className="min-w-fit bg-transparent border-r border-gray-300 px-3 py-4 text-sm focus:outline-none font-medium text-gray-700 transition-all cursor-pointer hover:bg-gray-50/50 appearance-none"
+        style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%234B5563' d='M6 9L1 4h10z'/%3E%3C/svg%3E")`,
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'right 8px center',
+            paddingRight: '24px'
+        }}
+    >
+        {countryCodes.map(country => (
+            <option key={country.code} value={country.code}>
+                {country.flag} {country.dial}
+            </option>
+        ))}
+    </select>
+)
+
 interface FormErrors {
     firstName?: string
     lastName?: string
@@ -213,7 +239,7 @@ export default function Register() {
         const { name, type, checked, value } = e.target
         const fieldValue = type === 'checkbox' ? checked : value
         setFormData(prev => ({ ...prev, [name]: fieldValue }))
-        
+
         // Clear error for this field when user starts typing
         if (errors[name as keyof FormErrors]) {
             setErrors(prev => ({ ...prev, [name]: undefined }))
@@ -239,7 +265,7 @@ export default function Register() {
 
     const handleSubmit = async (e: FormEvent) => {
         e.preventDefault()
-        
+
         if (!validateForm()) {
             toast.error('Agree to the terms and conditions.')
             return
@@ -325,28 +351,7 @@ export default function Register() {
         }
     }
 
-    const CountryCodeSelect = ({ value, onChange }: { value: typeof countryCodes[0], onChange: (country: typeof countryCodes[0]) => void }) => (
-        <select
-            value={value.code}
-            onChange={(e) => {
-                const country = countryCodes.find(c => c.code === e.target.value)
-                if (country) onChange(country)
-            }}
-            className="min-w-fit bg-transparent border-r border-gray-300 px-3 py-4 text-sm focus:outline-none font-medium text-gray-700 transition-all cursor-pointer hover:bg-gray-50/50 appearance-none"
-            style={{
-                backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%234B5563' d='M6 9L1 4h10z'/%3E%3C/svg%3E")`,
-                backgroundRepeat: 'no-repeat',
-                backgroundPosition: 'right 8px center',
-                paddingRight: '24px'
-            }}
-        >
-            {countryCodes.map(country => (
-                <option key={country.code} value={country.code}>
-                    {country.flag} {country.dial}
-                </option>
-            ))}
-        </select>
-    )
+
 
     return (
         <div className="min-h-screen flex flex-col bg-gray-50 font-sans text-gray-900">
@@ -362,6 +367,7 @@ export default function Register() {
                 draggable
                 pauseOnHover
                 theme="light"
+                aria-label="Notifications"
             />
             <main className="grow flex flex-col relative py-20 xl:py-32 overflow-hidden">
 
@@ -385,7 +391,7 @@ export default function Register() {
                     </Reveal>
 
                     <Reveal delay={150}>
-                       
+
                         {status === 'success' ? (
                             <div className="bg-white rounded-4xl p-12 text-center shadow-sm border border-gray-100 max-w-xl mx-auto">
                                 <div className="w-24 h-24 bg-primary/10 text-primary rounded-full flex items-center justify-center mx-auto mb-8">
@@ -404,27 +410,27 @@ export default function Register() {
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                         <div>
                                             <label className="block text-gray-700 font-medium mb-2 text-sm">First Name</label>
-                                            <input 
-                                                required 
-                                                name="firstName" 
-                                                value={formData.firstName} 
-                                                onChange={handleInputChange} 
-                                                type="text" 
-                                                className={`w-full bg-gray-50 border ${errors.firstName ? 'border-red-400 focus:border-red-500 focus:ring-red-500' : 'border-gray-200 focus:border-primary focus:ring-primary'} rounded-xl px-5 py-4 focus:outline-none focus:ring-1 transition-all text-gray-900`} 
-                                                placeholder="John" 
+                                            <input
+                                                required
+                                                name="firstName"
+                                                value={formData.firstName}
+                                                onChange={handleInputChange}
+                                                type="text"
+                                                className={`w-full bg-gray-50 border ${errors.firstName ? 'border-red-400 focus:border-red-500 focus:ring-red-500' : 'border-gray-200 focus:border-primary focus:ring-primary'} rounded-xl px-5 py-4 focus:outline-none focus:ring-1 transition-all text-gray-900`}
+                                                placeholder="John"
                                             />
                                             {errors.firstName && <p className="mt-1 text-sm text-red-600">{errors.firstName}</p>}
                                         </div>
                                         <div>
                                             <label className="block text-gray-700 font-medium mb-2 text-sm">Last Name</label>
-                                            <input 
-                                                required 
-                                                name="lastName" 
-                                                value={formData.lastName} 
-                                                onChange={handleInputChange} 
-                                                type="text" 
-                                                className={`w-full bg-gray-50 border ${errors.lastName ? 'border-red-400 focus:border-red-500 focus:ring-red-500' : 'border-gray-200 focus:border-primary focus:ring-primary'} rounded-xl px-5 py-4 focus:outline-none focus:ring-1 transition-all text-gray-900`} 
-                                                placeholder="Doe" 
+                                            <input
+                                                required
+                                                name="lastName"
+                                                value={formData.lastName}
+                                                onChange={handleInputChange}
+                                                type="text"
+                                                className={`w-full bg-gray-50 border ${errors.lastName ? 'border-red-400 focus:border-red-500 focus:ring-red-500' : 'border-gray-200 focus:border-primary focus:ring-primary'} rounded-xl px-5 py-4 focus:outline-none focus:ring-1 transition-all text-gray-900`}
+                                                placeholder="Doe"
                                             />
                                             {errors.lastName && <p className="mt-1 text-sm text-red-600">{errors.lastName}</p>}
                                         </div>
@@ -461,27 +467,27 @@ export default function Register() {
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                         <div>
                                             <label className="block text-gray-700 font-medium mb-2 text-sm">Company</label>
-                                            <input 
-                                                required 
-                                                name="company" 
-                                                value={formData.company} 
-                                                onChange={handleInputChange} 
-                                                type="text" 
-                                                className={`w-full bg-gray-50 border ${errors.company ? 'border-red-400 focus:border-red-500 focus:ring-red-500' : 'border-gray-200 focus:border-primary focus:ring-primary'} rounded-xl px-5 py-4 focus:outline-none focus:ring-1 transition-all text-gray-900`} 
-                                                placeholder="Acme Inc." 
+                                            <input
+                                                required
+                                                name="company"
+                                                value={formData.company}
+                                                onChange={handleInputChange}
+                                                type="text"
+                                                className={`w-full bg-gray-50 border ${errors.company ? 'border-red-400 focus:border-red-500 focus:ring-red-500' : 'border-gray-200 focus:border-primary focus:ring-primary'} rounded-xl px-5 py-4 focus:outline-none focus:ring-1 transition-all text-gray-900`}
+                                                placeholder="Acme Inc."
                                             />
                                             {errors.company && <p className="mt-1 text-sm text-red-600">{errors.company}</p>}
                                         </div>
                                         <div>
                                             <label className="block text-gray-700 font-medium mb-2 text-sm">Position / Job Title</label>
-                                            <input 
-                                                required 
-                                                name="position" 
-                                                value={formData.position} 
-                                                onChange={handleInputChange} 
-                                                type="text" 
-                                                className={`w-full bg-gray-50 border ${errors.position ? 'border-red-400 focus:border-red-500 focus:ring-red-500' : 'border-gray-200 focus:border-primary focus:ring-primary'} rounded-xl px-5 py-4 focus:outline-none focus:ring-1 transition-all text-gray-900`} 
-                                                placeholder="Software Engineer" 
+                                            <input
+                                                required
+                                                name="position"
+                                                value={formData.position}
+                                                onChange={handleInputChange}
+                                                type="text"
+                                                className={`w-full bg-gray-50 border ${errors.position ? 'border-red-400 focus:border-red-500 focus:ring-red-500' : 'border-gray-200 focus:border-primary focus:ring-primary'} rounded-xl px-5 py-4 focus:outline-none focus:ring-1 transition-all text-gray-900`}
+                                                placeholder="Software Engineer"
                                             />
                                             {errors.position && <p className="mt-1 text-sm text-red-600">{errors.position}</p>}
                                         </div>
@@ -524,14 +530,14 @@ export default function Register() {
 
                                     <div>
                                         <label className="block text-gray-700 font-medium mb-2 text-sm">Industry</label>
-                                        <input 
-                                            required 
-                                            name="industry" 
-                                            value={formData.industry} 
-                                            onChange={handleInputChange} 
-                                            type="text" 
-                                            className={`w-full bg-gray-50 border ${errors.industry ? 'border-red-400 focus:border-red-500 focus:ring-red-500' : 'border-gray-200 focus:border-primary focus:ring-primary'} rounded-xl px-5 py-4 focus:outline-none focus:ring-1 transition-all text-gray-900`} 
-                                            placeholder="e.g. Technology, Finance, Healthcare" 
+                                        <input
+                                            required
+                                            name="industry"
+                                            value={formData.industry}
+                                            onChange={handleInputChange}
+                                            type="text"
+                                            className={`w-full bg-gray-50 border ${errors.industry ? 'border-red-400 focus:border-red-500 focus:ring-red-500' : 'border-gray-200 focus:border-primary focus:ring-primary'} rounded-xl px-5 py-4 focus:outline-none focus:ring-1 transition-all text-gray-900`}
+                                            placeholder="e.g. Technology, Finance, Healthcare"
                                         />
                                         {errors.industry && <p className="mt-1 text-sm text-red-600">{errors.industry}</p>}
                                     </div>
@@ -539,27 +545,27 @@ export default function Register() {
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                         <div>
                                             <label className="block text-gray-700 font-medium mb-2 text-sm">City</label>
-                                            <input 
-                                                required 
-                                                name="city" 
-                                                value={formData.city} 
-                                                onChange={handleInputChange} 
-                                                type="text" 
-                                                className={`w-full bg-gray-50 border ${errors.city ? 'border-red-400 focus:border-red-500 focus:ring-red-500' : 'border-gray-200 focus:border-primary focus:ring-primary'} rounded-xl px-5 py-4 focus:outline-none focus:ring-1 transition-all text-gray-900`} 
-                                                placeholder="Makurdi" 
+                                            <input
+                                                required
+                                                name="city"
+                                                value={formData.city}
+                                                onChange={handleInputChange}
+                                                type="text"
+                                                className={`w-full bg-gray-50 border ${errors.city ? 'border-red-400 focus:border-red-500 focus:ring-red-500' : 'border-gray-200 focus:border-primary focus:ring-primary'} rounded-xl px-5 py-4 focus:outline-none focus:ring-1 transition-all text-gray-900`}
+                                                placeholder="Makurdi"
                                             />
                                             {errors.city && <p className="mt-1 text-sm text-red-600">{errors.city}</p>}
                                         </div>
                                         <div>
                                             <label className="block text-gray-700 font-medium mb-2 text-sm">Country</label>
-                                            <input 
-                                                required 
-                                                name="country" 
-                                                value={formData.country} 
-                                                onChange={handleInputChange} 
-                                                type="text" 
-                                                className={`w-full bg-gray-50 border ${errors.country ? 'border-red-400 focus:border-red-500 focus:ring-red-500' : 'border-gray-200 focus:border-primary focus:ring-primary'} rounded-xl px-5 py-4 focus:outline-none focus:ring-1 transition-all text-gray-900`} 
-                                                placeholder="Nigeria" 
+                                            <input
+                                                required
+                                                name="country"
+                                                value={formData.country}
+                                                onChange={handleInputChange}
+                                                type="text"
+                                                className={`w-full bg-gray-50 border ${errors.country ? 'border-red-400 focus:border-red-500 focus:ring-red-500' : 'border-gray-200 focus:border-primary focus:ring-primary'} rounded-xl px-5 py-4 focus:outline-none focus:ring-1 transition-all text-gray-900`}
+                                                placeholder="Nigeria"
                                             />
                                             {errors.country && <p className="mt-1 text-sm text-red-600">{errors.country}</p>}
                                         </div>
