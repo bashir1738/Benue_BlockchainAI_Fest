@@ -46,7 +46,7 @@ export default function AdminDashboard() {
             if (!usersRes.ok || !hackathonRes.ok || !showcaseRes.ok || !speakerRes.ok) {
                 if (usersRes.status === 401 || hackathonRes.status === 401 || showcaseRes.status === 401 || speakerRes.status === 401) {
                     localStorage.removeItem('token')
-                    window.location.href = '/admin-login'
+                    window.location.href = '/admin/login'
                     return
                 }
                 throw new Error('Failed to fetch stats')
@@ -65,7 +65,7 @@ export default function AdminDashboard() {
                 showcaseCount: showcaseData.data?.pagination?.total || 0,
                 speakerCount: speakerData.data?.pagination?.total || 0,
             })
-        } catch (err) {
+        } catch (_err) {
             setError('Failed to load dashboard stats')
         } finally {
             setLoading(false)

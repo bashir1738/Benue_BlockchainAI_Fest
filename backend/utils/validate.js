@@ -142,12 +142,8 @@ function baseEmailField(label, isRequired = true) {
 const registerSchema = Joi.object({
   firstName: nameField('First name'),
   lastName:  nameField('Last name'),
-  company:   generalTextField('Company name', 1, 255, true),
-  position:  generalTextField('Position', 1, 255, true),
   corporateEmail: baseEmailField('Corporate email'),
-  secondaryEmail: baseEmailField('Secondary email', false),
   phone:    phoneField('Phone number'),
-  whatsapp: phoneField('WhatsApp number'),
   industry: locationField('Industry', 255),
   city:     locationField('City'),
   country:  locationField('Country'),

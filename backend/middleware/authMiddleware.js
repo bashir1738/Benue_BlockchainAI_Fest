@@ -1,3 +1,4 @@
+const jwt = require('jsonwebtoken');
 const { securityLogger } = require('./logger');
 
 
@@ -18,8 +19,8 @@ function authMiddleware(req, res, next) {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
     
     // Hardening: ensure the token has basic expected payload
-    if (!decoded.id && !decoded.email) {
-      securityLogger(req, 'INVALID_TOKEN_PAYLOAD', 'Token decoded but missing ID/Email');
+    if (!decoded.id && !decoded.email && !decoded.role) {
+      securityLogger(req, 'INVALID_TOKEN_PAYLOAD', 'Token decoded but missing ID/Email/role');
       throw new Error('Invalid token payload');
     }
 

@@ -70,7 +70,7 @@ export default function AdminRegistrations() {
             } else {
                 setError(data.message || 'Failed to fetch registrations')
             }
-        } catch (err) {
+        } catch (_err) {
             setError('Failed to connect to the server')
         } finally {
             setLoading(false)
@@ -116,7 +116,7 @@ export default function AdminRegistrations() {
             } else {
                 setError(data.message || 'Failed to delete registration')
             }
-        } catch (err) {
+        } catch (_err) {
             setError('Failed to delete registration')
         } finally {
             setDeleteLoading(null)

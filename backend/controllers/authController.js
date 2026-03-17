@@ -20,12 +20,8 @@ async function register(req, res) {
   const {
     firstName,
     lastName,
-    company,
-    position,
     corporateEmail,
-    secondaryEmail,
     phone,
-    whatsapp,
     industry,
     city,
     country,
@@ -49,24 +45,12 @@ async function register(req, res) {
       });
     }
 
-    const existingWhatsapp = await User.findOne({ where: { whatsapp } });
-    if (existingWhatsapp) {
-      return res.status(409).json({
-        success: false,
-        message: 'This WhatsApp number is already registered.',
-      });
-    }
 
-   
     const user = await User.create({
       firstName,
       lastName,
-      company,
-      position,
       corporateEmail,
-      secondaryEmail: secondaryEmail || null,
       phone,
-      whatsapp,
       industry: industry || null,
       city: city || null,
       country: country || null,

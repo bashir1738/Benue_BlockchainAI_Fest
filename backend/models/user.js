@@ -18,14 +18,6 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      company: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
-      position: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
       corporateEmail: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -34,19 +26,7 @@ module.exports = (sequelize, DataTypes) => {
           isEmail: true,
         },
       },
-      secondaryEmail: {
-        type: DataTypes.STRING,
-        allowNull: true,
-        validate: {
-          isEmail: true,
-        },
-      },
       phone: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        unique: true,
-      },
-      whatsapp: {
         type: DataTypes.STRING,
         allowNull: false,
         unique: true,

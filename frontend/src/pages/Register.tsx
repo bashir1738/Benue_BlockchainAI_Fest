@@ -91,11 +91,7 @@ interface FormErrors {
     firstName?: string
     lastName?: string
     corporateEmail?: string
-    secondaryEmail?: string
-    company?: string
-    position?: string
     phone?: string
-    whatsapp?: string
     industry?: string
     city?: string
     country?: string
@@ -108,17 +104,12 @@ export default function Register() {
     const [errors, setErrors] = useState<FormErrors>({})
 
     const [phoneCountry, setPhoneCountry] = useState(countryCodes[0])
-    const [whatsappCountry, setWhatsappCountry] = useState(countryCodes[0])
 
     const [formData, setFormData] = useState({
         firstName: '',
         lastName: '',
         corporateEmail: '',
-        secondaryEmail: '',
-        company: '',
-        position: '',
         phone: '',
-        whatsapp: '',
         industry: '',
         city: '',
         country: '',
@@ -129,11 +120,7 @@ export default function Register() {
         firstName: '',
         lastName: '',
         corporateEmail: '',
-        secondaryEmail: '',
-        company: '',
-        position: '',
         phone: '',
-        whatsapp: '',
         industry: '',
         city: '',
         country: '',
@@ -181,35 +168,11 @@ export default function Register() {
                 }
                 return undefined
             }
-            case 'secondaryEmail': {
-                const v = value as string
-                if (v && !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(v)) {
-                    return 'Please enter a valid email address'
-                }
-                return undefined
-            }
-            case 'company': {
-                const v = value as string
-                if (!v.trim()) return 'Company name is required'
-                return undefined
-            }
-            case 'position': {
-                const v = value as string
-                if (!v.trim()) return 'Position is required'
-                return undefined
-            }
             case 'phone': {
                 const v = value as string
                 if (!v.trim()) return 'Phone number is required'
                 const phoneRegex = /^[0-9]{7,15}$/
                 if (!phoneRegex.test(v.replace(/\D/g, ''))) return 'Please enter a valid phone number (7-15 digits)'
-                return undefined
-            }
-            case 'whatsapp': {
-                const v = value as string
-                if (!v.trim()) return 'WhatsApp number is required'
-                const whatsappRegex = /^[0-9]{7,15}$/
-                if (!whatsappRegex.test(v.replace(/\D/g, ''))) return 'Please enter a valid WhatsApp number (7-15 digits)'
                 return undefined
             }
             case 'industry': {
@@ -273,9 +236,8 @@ export default function Register() {
 
         setLoading(true)
 
-        // Combine country codes with phone numbers
+        // Combine country code with phone number
         const fullPhone = phoneCountry.dial + formData.phone.replace(/\D/g, '')
-        const fullWhatsapp = whatsappCountry.dial + formData.whatsapp.replace(/\D/g, '')
 
         const {
             termsAccepted: _termsAccepted,
@@ -285,7 +247,6 @@ export default function Register() {
         const payload = {
             ...restFormData,
             phone: fullPhone,
-            whatsapp: fullWhatsapp,
         }
 
         try {
@@ -316,11 +277,7 @@ export default function Register() {
                         if (lower.includes('first name')) backendErrors.firstName = msg
                         else if (lower.includes('last name')) backendErrors.lastName = msg
                         else if (lower.includes('corporate email')) backendErrors.corporateEmail = msg
-                        else if (lower.includes('secondary email')) backendErrors.secondaryEmail = msg
-                        else if (lower.includes('company')) backendErrors.company = msg
-                        else if (lower.includes('position')) backendErrors.position = msg
                         else if (lower.includes('phone')) backendErrors.phone = msg
-                        else if (lower.includes('whatsapp')) backendErrors.whatsapp = msg
                         else if (lower.includes('industry')) backendErrors.industry = msg
                         else if (lower.includes('city')) backendErrors.city = msg
                         else if (lower.includes('country')) backendErrors.country = msg
@@ -334,7 +291,6 @@ export default function Register() {
                     const lower = msg.toLowerCase()
                     if (lower.includes('corporate email')) backendErrors.corporateEmail = msg
                     else if (lower.includes('phone number')) backendErrors.phone = msg
-                    else if (lower.includes('whatsapp')) backendErrors.whatsapp = msg
 
                     if (Object.keys(backendErrors).length > 0) {
                         setErrors(prev => ({ ...prev, ...backendErrors }))
@@ -450,50 +406,6 @@ export default function Register() {
                                             />
                                             {errors.corporateEmail && <p className="mt-1 text-sm text-red-600">{errors.corporateEmail}</p>}
                                         </div>
-                                        <div>
-                                            <label className="block text-gray-700 font-medium mb-2 text-sm">Secondary Email <span className="text-gray-400 font-light">(Optional)</span></label>
-                                            <input
-                                                name="secondaryEmail"
-                                                value={formData.secondaryEmail}
-                                                onChange={handleInputChange}
-                                                type="email"
-                                                className={`w-full bg-gray-50 border ${errors.secondaryEmail ? 'border-red-400 focus:border-red-500 focus:ring-red-500' : 'border-gray-200 focus:border-primary focus:ring-primary'} rounded-xl px-5 py-4 focus:outline-none focus:ring-1 transition-all text-gray-900`}
-                                                placeholder="john.personal@example.com"
-                                            />
-                                            {errors.secondaryEmail && <p className="mt-1 text-sm text-red-600">{errors.secondaryEmail}</p>}
-                                        </div>
-                                    </div>
-
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                        <div>
-                                            <label className="block text-gray-700 font-medium mb-2 text-sm">Company</label>
-                                            <input
-                                                required
-                                                name="company"
-                                                value={formData.company}
-                                                onChange={handleInputChange}
-                                                type="text"
-                                                className={`w-full bg-gray-50 border ${errors.company ? 'border-red-400 focus:border-red-500 focus:ring-red-500' : 'border-gray-200 focus:border-primary focus:ring-primary'} rounded-xl px-5 py-4 focus:outline-none focus:ring-1 transition-all text-gray-900`}
-                                                placeholder="Acme Inc."
-                                            />
-                                            {errors.company && <p className="mt-1 text-sm text-red-600">{errors.company}</p>}
-                                        </div>
-                                        <div>
-                                            <label className="block text-gray-700 font-medium mb-2 text-sm">Position / Job Title</label>
-                                            <input
-                                                required
-                                                name="position"
-                                                value={formData.position}
-                                                onChange={handleInputChange}
-                                                type="text"
-                                                className={`w-full bg-gray-50 border ${errors.position ? 'border-red-400 focus:border-red-500 focus:ring-red-500' : 'border-gray-200 focus:border-primary focus:ring-primary'} rounded-xl px-5 py-4 focus:outline-none focus:ring-1 transition-all text-gray-900`}
-                                                placeholder="Software Engineer"
-                                            />
-                                            {errors.position && <p className="mt-1 text-sm text-red-600">{errors.position}</p>}
-                                        </div>
-                                    </div>
-
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                         <div className="group">
                                             <label className="block text-gray-700 font-medium mb-3 text-sm">Phone Number</label>
                                             <div className={`flex rounded-xl overflow-hidden border-2 transition-all duration-300 ${errors.phone ? 'border-red-400 bg-red-50/30' : 'border-gray-200 bg-gray-50 group-focus-within:border-primary group-focus-within:shadow-md group-focus-within:shadow-primary/10'}`}>
@@ -509,22 +421,6 @@ export default function Register() {
                                                 />
                                             </div>
                                             {errors.phone && <p className="mt-2 text-sm text-red-600 font-medium">⚠ {errors.phone}</p>}
-                                        </div>
-                                        <div className="group">
-                                            <label className="block text-gray-700 font-medium mb-3 text-sm">WhatsApp Number</label>
-                                            <div className={`flex rounded-xl overflow-hidden border-2 transition-all duration-300 ${errors.whatsapp ? 'border-red-400 bg-red-50/30' : 'border-gray-200 bg-gray-50 group-focus-within:border-green-500 group-focus-within:shadow-md group-focus-within:shadow-green-500/10'}`}>
-                                                <CountryCodeSelect value={whatsappCountry} onChange={setWhatsappCountry} />
-                                                <input
-                                                    required
-                                                    name="whatsapp"
-                                                    value={formData.whatsapp}
-                                                    onChange={handleInputChange}
-                                                    type="tel"
-                                                    className={`flex-1 bg-transparent border-none px-5 py-4 focus:outline-none transition-all text-gray-900 placeholder-gray-400`}
-                                                    placeholder="801 234 5678"
-                                                />
-                                            </div>
-                                            {errors.whatsapp && <p className="mt-2 text-sm text-red-600 font-medium">⚠ {errors.whatsapp}</p>}
                                         </div>
                                     </div>
 
