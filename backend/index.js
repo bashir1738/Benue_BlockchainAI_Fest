@@ -11,16 +11,29 @@ const hackathonRoutes = require('./routes/hackathonRoutes');
 const productShowcaseRoutes = require('./routes/productShowcaseRoutes');
 const speakerApplicationRoutes = require('./routes/speakerApplicationRoutes');
 
+const { globalLimiter } = require('./middleware/rateLimiter');
+
 const app = express();
 const PORT = process.env.PORT || 5000;
 
 
+// SECURE CORS CONFIG
+const corsOptions = {
+  origin: process.env.CORS_ORIGIN || 'http://localhost:5173',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true,
+  optionsSuccessStatus: 200
+};
+
+// GLOBAL SECURITY MIDDLEWARE
 app.use(helmet());
-app.use(cors());
+app.use(cors(corsOptions));
+app.use(globalLimiter);
 
-
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+// REQUEST PARSING WITH SIZE LIMITS (PROTECTION AGAINST LARGE PAYLOAD ATTACKS)
+app.use(express.json({ limit: '10kb' }));
+app.use(express.urlencoded({ extended: true, limit: '10kb' }));
 
 
 app.use('/api/auth', authRoutes);

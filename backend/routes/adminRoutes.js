@@ -1,7 +1,7 @@
 const express = require('express');
 const { getAllUsers, getUserById, deleteUser } = require('../controllers/adminController');
 const authMiddleware = require('../middleware/authMiddleware');
-const adminLogger = require('../middleware/logger');
+const { adminLogger } = require('../middleware/logger');
 
 const router = express.Router();
 

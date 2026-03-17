@@ -2,7 +2,7 @@ const express = require('express');
 const { productShowcaseRegister, getAllProductShowcases, deleteProductShowcase } = require('../controllers/productShowcaseController');
 const { registrationLimiter } = require('../middleware/rateLimiter');
 const authMiddleware = require('../middleware/authMiddleware');
-const adminLogger = require('../middleware/logger');
+const { adminLogger } = require('../middleware/logger');
 
 const router = express.Router();
 

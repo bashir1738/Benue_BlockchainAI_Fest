@@ -2,7 +2,8 @@ const fs = require('fs');
 const path = require('path');
 
 const logDir = path.join(__dirname, '..', 'logs');
-const logFile = path.join(logDir, 'admin.log');
+const adminLogFile = path.join(logDir, 'admin.log');
+const securityLogFile = path.join(logDir, 'security.log');
 
 
 if (!fs.existsSync(logDir)) {
@@ -19,7 +20,7 @@ function adminLogger(req, res, next) {
 
   const logEntry = `[${timestamp}] ADMIN ACCESS | IP: ${ip} | Admin: ${adminEmail} | ${method} ${url}\n`;
 
-  fs.appendFile(logFile, logEntry, err => {
+  fs.appendFile(adminLogFile, logEntry, err => {
     if (err) {
       console.error('[Logger] Failed to write admin log:', err.message);
     }
@@ -28,4 +29,22 @@ function adminLogger(req, res, next) {
   next();
 }
 
-module.exports = adminLogger;
+function securityLogger(req, type, message) {
+  const timestamp = new Date().toISOString();
+  const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress || 'unknown';
+  const method = req.method;
+  const url = req.originalUrl;
+
+  const logEntry = `[${timestamp}] SECURITY | TYPE: ${type} | IP: ${ip} | ${method} ${url} | ${message}\n`;
+
+  fs.appendFile(securityLogFile, logEntry, err => {
+    if (err) {
+      console.error('[Logger] Failed to write security log:', err.message);
+    }
+  });
+  
+  // Also log to console for visibility in dev
+  console.warn(logEntry.trim());
+}
+
+module.exports = { adminLogger, securityLogger };
