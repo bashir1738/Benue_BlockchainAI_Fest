@@ -347,7 +347,8 @@ export default function Register() {
                     </Reveal>
 
                     <Reveal delay={150}>
-                      
+
+
                         {status === 'success' ? (
                             <div className="bg-white rounded-4xl p-12 text-center shadow-sm border border-gray-100 max-w-xl mx-auto">
                                 <div className="w-24 h-24 bg-primary/10 text-primary rounded-full flex items-center justify-center mx-auto mb-8">
