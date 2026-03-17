@@ -93,31 +93,50 @@ const strictCommonDomains = [
   'gmail.com', 'yahoo.com', 'yahoo.com.ng', 'outlook.com',
   'hotmail.com', 'yandex.com', 'yandex.ru',
 ];
-const commonRoots = ['gmail', 'yahoo', 'outlook', 'hotmail', 'yandex'];
 
-const corporateEmailField = Joi.string()
-  .trim()
-  .lowercase()
-  .email({ tlds: { allow: allowedTlds } })
-  .max(254) // RFC 5321 max email length
-  .custom((value, helpers) => {
-    const [, domainRaw = ''] = value.split('@');
-    const domain = domainRaw.toLowerCase();
-    const isCommonRoot = commonRoots.some(root => domain.startsWith(root));
-    const isExactCommon = strictCommonDomains.includes(domain);
-    if (isCommonRoot && !isExactCommon) {
-      return helpers.error('string.email_common_typo');
-    }
-    return value;
-  })
-  .required()
-  .messages({
-    'string.empty': 'Corporate email is required',
-    'string.email': 'Please enter a valid corporate email address',
-    'string.max': 'Email address is too long',
-    'string.email_common_typo':
-      'Please check your email domain (e.g. @gmail.com, @yahoo.com). It looks misspelled.',
-  });
+
+const typoPatterns = [
+  { root: 'gmail', regex: /^(g[ma][msi]l|gamil|gmal|gmial|gnail|gmil|gimail|gmaill|gmai)\./i },
+  { root: 'yahoo', regex: /^(yaho|yhaoo|yahoocomp|uahoo|yahho|yahu)\./i },
+  { root: 'outlook', regex: /^(outlok|outloook|outlouk|autlook)\./i },
+  { root: 'hotmail', regex: /^(hotmil|hotmial|hotmale|hotmaill)\./i }
+];
+
+/**
+ * Creates a robust email field with typo detection for common domains
+ * @param {string} label 
+ * @param {boolean} isRequired 
+ */
+function baseEmailField(label, isRequired = true) {
+  const base = Joi.string()
+    .trim()
+    .lowercase()
+    .email({ tlds: { allow: allowedTlds } })
+    .max(254)
+    .custom((value, helpers) => {
+      const [, domainRaw = ''] = value.split('@');
+      const domain = domainRaw.toLowerCase();
+      
+      if (strictCommonDomains.includes(domain)) return value;
+
+      const isTypo = typoPatterns.some(p => p.regex.test(domain));
+      
+      const startsWithCommon = typoPatterns.some(p => domain.startsWith(p.root));
+
+      if (isTypo || startsWithCommon) {
+        return helpers.error('string.email_typo');
+      }
+      return value;
+    })
+    .messages({
+      'string.empty': `${label} is required`,
+      'string.email': `Please enter a valid ${label.toLowerCase()}`,
+      'string.max': `${label} is too long`,
+      'string.email_typo': '{{#value}}  (e.g. @gmail.com) looks misspelled.',
+    });
+
+  return isRequired ? base.required() : base.optional().allow('', null);
+}
 
 
 const registerSchema = Joi.object({
@@ -125,18 +144,8 @@ const registerSchema = Joi.object({
   lastName:  nameField('Last name'),
   company:   generalTextField('Company name', 1, 255, true),
   position:  generalTextField('Position', 1, 255, true),
-  corporateEmail: corporateEmailField,
-  secondaryEmail: Joi.string()
-    .trim()
-    .lowercase()
-    .email({ tlds: { allow: allowedTlds } })
-    .max(254)
-    .optional()
-    .allow('', null)
-    .messages({
-      'string.email': 'Please enter a valid secondary email address',
-      'string.max': 'Secondary email address is too long',
-    }),
+  corporateEmail: baseEmailField('Corporate email'),
+  secondaryEmail: baseEmailField('Secondary email', false),
   phone:    phoneField('Phone number'),
   whatsapp: phoneField('WhatsApp number'),
   industry: locationField('Industry', 255),
@@ -146,17 +155,7 @@ const registerSchema = Joi.object({
 
 
 const adminLoginSchema = Joi.object({
-  email: Joi.string()
-    .trim()
-    .lowercase()
-    .email({ tlds: { allow: allowedTlds } })
-    .max(254)
-    .required()
-    .messages({
-      'string.empty': 'Admin email is required',
-      'string.email': 'Please enter a valid email address',
-      'string.max': 'Email address is too long',
-    }),
+  email: baseEmailField('Admin email'),
   
   password: Joi.string()
     .min(8)
@@ -175,17 +174,7 @@ const adminLoginSchema = Joi.object({
 const hackathonRegisterSchema = Joi.object({
   firstName: nameField('First name'),
   lastName:  nameField('Last name'),
-  email: Joi.string()
-    .trim()
-    .lowercase()
-    .email({ tlds: { allow: allowedTlds } })
-    .max(254)
-    .required()
-    .messages({
-      'string.empty': 'Email is required',
-      'string.email': 'Please enter a valid email address',
-      'string.max': 'Email address is too long',
-    }),
+  email: baseEmailField('Email'),
   githubPortfolio: Joi.string()
     .trim()
     .uri({ scheme: ['https'] }) 
@@ -202,17 +191,7 @@ const hackathonRegisterSchema = Joi.object({
 const productShowcaseSchema = Joi.object({
   firstName: nameField('First name'),
   lastName:  nameField('Last name'),
-  email: Joi.string()
-    .trim()
-    .lowercase()
-    .email({ tlds: { allow: allowedTlds } })
-    .max(254)
-    .required()
-    .messages({
-      'string.empty': 'Email is required',
-      'string.email': 'Please enter a valid email address',
-      'string.max': 'Email address is too long',
-    }),
+  email: baseEmailField('Email'),
   productLink: Joi.string()
     .trim()
     .uri({ scheme: ['https'] })
@@ -229,17 +208,7 @@ const productShowcaseSchema = Joi.object({
 const speakerApplicationSchema = Joi.object({
   firstName: nameField('First name'),
   lastName:  nameField('Last name'),
-  email: Joi.string()
-    .trim()
-    .lowercase()
-    .email({ tlds: { allow: allowedTlds } })
-    .max(254)
-    .required()
-    .messages({
-      'string.empty': 'Email is required',
-      'string.email': 'Please enter a valid email address',
-      'string.max': 'Email address is too long',
-    }),
+  email: baseEmailField('Email'),
   linkedinLink: Joi.string()
     .trim()
     .uri({ scheme: ['https'] })

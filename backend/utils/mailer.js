@@ -35,8 +35,8 @@ Venue: ${process.env.EVENT_VENUE}
 Follow us:
 
 Twitter: ${process.env.SOCIAL_TWITTER}
-LinkedIn: ${process.env.SOCIAL_LINKEDIN}
-Instagram: ${process.env.SOCIAL_INSTAGRAM}
+Facebook: ${process.env.SOCIAL_FACEBOOK}
+YouTube: ${process.env.SOCIAL_YOUTUBE}
 
 We look forward to seeing you!
 
@@ -82,11 +82,11 @@ The Benue BlockchainAI Fest Team`,
         <a href="${process.env.SOCIAL_TWITTER}" target="_blank">
           <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/x.svg" alt="X (Twitter)" width="20" height="20" />
         </a>
-        <a href="${process.env.SOCIAL_LINKEDIN}" target="_blank">
-          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg" alt="LinkedIn" width="20" height="20" />
+        <a href="${process.env.SOCIAL_FACEBOOK}" target="_blank">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/facebook.svg" alt="Facebook" width="20" height="20" />
         </a>
-        <a href="${process.env.SOCIAL_INSTAGRAM}" target="_blank">
-          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg" alt="Instagram" width="20" height="20" />
+        <a href="${process.env.SOCIAL_YOUTUBE}" target="_blank">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/youtube.svg" alt="YouTube" width="20" height="20" />
         </a>
       </div>
 
@@ -149,8 +149,8 @@ Venue: ${process.env.EVENT_VENUE}
 Follow us:
 
 Twitter: ${process.env.SOCIAL_TWITTER}
-LinkedIn: ${process.env.SOCIAL_LINKEDIN}
-Instagram: ${process.env.SOCIAL_INSTAGRAM}
+Facebook: ${process.env.SOCIAL_FACEBOOK}
+YouTube: ${process.env.SOCIAL_YOUTUBE}
 
 Get ready to build, innovate, and win!
 
@@ -196,11 +196,11 @@ The Benue BlockchainAI Fest Team`,
         <a href="${process.env.SOCIAL_TWITTER}" target="_blank">
           <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/x.svg" alt="X (Twitter)" width="20" height="20" />
         </a>
-        <a href="${process.env.SOCIAL_LINKEDIN}" target="_blank">
-          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg" alt="LinkedIn" width="20" height="20" />
+        <a href="${process.env.SOCIAL_FACEBOOK}" target="_blank">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/facebook.svg" alt="Facebook" width="20" height="20" />
         </a>
-        <a href="${process.env.SOCIAL_INSTAGRAM}" target="_blank">
-          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg" alt="Instagram" width="20" height="20" />
+        <a href="${process.env.SOCIAL_YOUTUBE}" target="_blank">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/youtube.svg" alt="YouTube" width="20" height="20" />
         </a>
       </div>
 
@@ -262,8 +262,8 @@ Venue: ${process.env.EVENT_VENUE}
 Follow us:
 
 Twitter: ${process.env.SOCIAL_TWITTER}
-LinkedIn: ${process.env.SOCIAL_LINKEDIN}
-Instagram: ${process.env.SOCIAL_INSTAGRAM}
+Facebook: ${process.env.SOCIAL_FACEBOOK}
+YouTube: ${process.env.SOCIAL_YOUTUBE}
 
 Get ready to showcase your innovation to the world!
 
@@ -309,11 +309,11 @@ The Benue BlockchainAI Fest Team`,
         <a href="${process.env.SOCIAL_TWITTER}" target="_blank">
           <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/x.svg" alt="X (Twitter)" width="20" height="20" />
         </a>
-        <a href="${process.env.SOCIAL_LINKEDIN}" target="_blank">
-          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg" alt="LinkedIn" width="20" height="20" />
+        <a href="${process.env.SOCIAL_FACEBOOK}" target="_blank">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/facebook.svg" alt="Facebook" width="20" height="20" />
         </a>
-        <a href="${process.env.SOCIAL_INSTAGRAM}" target="_blank">
-          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg" alt="Instagram" width="20" height="20" />
+        <a href="${process.env.SOCIAL_YOUTUBE}" target="_blank">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/youtube.svg" alt="YouTube" width="20" height="20" />
         </a>
       </div>
 
@@ -374,8 +374,8 @@ Venue: ${process.env.EVENT_VENUE}
 Follow us for updates:
 
 Twitter: ${process.env.SOCIAL_TWITTER}
-LinkedIn: ${process.env.SOCIAL_LINKEDIN}
-Instagram: ${process.env.SOCIAL_INSTAGRAM}
+Facebook: ${process.env.SOCIAL_FACEBOOK}
+YouTube: ${process.env.SOCIAL_YOUTUBE}
 
 We appreciate your willingness to share your expertise with our community.
 
@@ -421,11 +421,11 @@ The Benue BlockchainAI Fest Team`,
         <a href="${process.env.SOCIAL_TWITTER}" target="_blank">
           <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/x.svg" alt="X (Twitter)" width="20" height="20" />
         </a>
-        <a href="${process.env.SOCIAL_LINKEDIN}" target="_blank">
-          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg" alt="LinkedIn" width="20" height="20" />
+        <a href="${process.env.SOCIAL_FACEBOOK}" target="_blank">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/facebook.svg" alt="Facebook" width="20" height="20" />
         </a>
-        <a href="${process.env.SOCIAL_INSTAGRAM}" target="_blank">
-          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg" alt="Instagram" width="20" height="20" />
+        <a href="${process.env.SOCIAL_YOUTUBE}" target="_blank">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/youtube.svg" alt="YouTube" width="20" height="20" />
         </a>
       </div>
 
