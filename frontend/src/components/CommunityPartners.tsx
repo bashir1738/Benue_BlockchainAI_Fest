@@ -28,26 +28,20 @@ export default function CommunityPartners() {
                     </div>
                 </Reveal>
 
-                <Reveal delay={100}>
-                    <div className="relative overflow-hidden group">
-                        {/* Gradient Masks for smooth fading at edges */}
-                        <div className="absolute left-0 top-0 bottom-0 w-10 bg-linear-to-r from-white/50 to-transparent z-10 pointer-events-none"></div>
-                        <div className="absolute right-0 top-0 bottom-0 w-10 bg-linear-to-l from-white/50 to-transparent z-10 pointer-events-none"></div>
-
-                        <div className="flex w-max animate-marquee pause-on-hover gap-10 md:gap-10 items-center py-4">
-                            {[...partners, ...partners, ...partners].map((partner, i) => (
-                                <div 
-                                    key={i} 
-                                    className="shrink-0 w-30 md:w-32 lg:w-48 transition-all duration-500 transform hover:scale-110"
-                                >
-                                    <img 
-                                        src={partner.logo} 
-                                        alt={partner.name} 
-                                        className="w-full h-auto object-contain max-h-16 md:max-h-20"
-                                    />
-                                </div>
-                            ))}
-                        </div>
+                <Reveal delay={200}>
+                    <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-8 md:gap-12 items-center justify-items-center">
+                        {partners.map((partner, i) => (
+                            <div 
+                                key={i} 
+                                className="w-full max-w-[180px]  transition-all duration-500  transform hover:scale-120"
+                            >
+                                <img 
+                                    src={partner.logo} 
+                                    alt={partner.name} 
+                                    className="w-full h-auto object-contain max-h-40"
+                                />
+                            </div>
+                        ))}
                     </div>
                 </Reveal>
 
