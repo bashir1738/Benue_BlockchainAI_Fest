@@ -29,10 +29,10 @@ export default function App() {
           <Route element={<ProtectedRoute />}>
             <Route path="/admin" element={<AdminLayout />}>
               <Route index element={<AdminDashboard />} />
-              <Route path="registrations" element={<AdminRegistrations />} />
-              <Route path="hackathon" element={<AdminHackathon />} />
-              <Route path="showcase" element={<AdminShowcase />} />
-              <Route path="speaker" element={<AdminSpeaker />} />
+              <Route path="/admin/registrations" element={<AdminRegistrations />} />
+              <Route path="/admin/hackathon" element={<AdminHackathon />} />
+              <Route path="/admin/showcase" element={<AdminShowcase />} />
+              <Route path="/admin/speaker" element={<AdminSpeaker />} />
             </Route>
           </Route>
         </Routes>

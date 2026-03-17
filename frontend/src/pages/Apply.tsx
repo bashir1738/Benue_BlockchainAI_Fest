@@ -486,7 +486,7 @@ export default function Apply() {
                                                 onChange={handleInputChange}
                                                 className="w-5 h-5 rounded border-gray-300 text-primary focus:ring-primary focus:ring-offset-0 cursor-pointer"
                                             />
-                                            <label htmlFor="terms" className="text-gray-500 text-sm font-light">
+                                            <label htmlFor="terms" className="text-black text-sm font-medium">
                                                 I agree to the <a href="#" className="font-medium hover:text-primary transition-colors">Terms of Service</a> & <a href="#" className="font-medium hover:text-primary transition-colors">Privacy Policy</a>.
                                             </label>
                                         </div>

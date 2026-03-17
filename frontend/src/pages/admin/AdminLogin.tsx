@@ -58,7 +58,7 @@ export default function AdminLogin() {
     const handleLogin = async (e: FormEvent) => {
         e.preventDefault()
         setError('')
-        
+
         if (!validateForm()) {
             return
         }

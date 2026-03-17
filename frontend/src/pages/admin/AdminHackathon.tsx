@@ -52,7 +52,7 @@ export default function AdminHackathon() {
             if (!response.ok) {
                 if (response.status === 401) {
                     localStorage.removeItem('token')
-                    window.location.href = '/admin-login'
+                    window.location.href = '/admin/login'
                     return
                 }
                 throw new Error('Failed to fetch hackathon registrations')
@@ -96,7 +96,7 @@ export default function AdminHackathon() {
             if (!response.ok) {
                 if (response.status === 401) {
                     localStorage.removeItem('token')
-                    window.location.href = '/admin-login'
+                    window.location.href = '/admin/login'
                     return
                 }
                 throw new Error('Failed to delete registration')
