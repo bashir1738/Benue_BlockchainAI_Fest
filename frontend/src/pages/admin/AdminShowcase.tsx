@@ -233,7 +233,7 @@ export default function AdminShowcase() {
                                         )}
                                     </td>
                                     <td className="px-6 py-4 hidden xl:table-cell">
-                                        <p className="text-sm text-gray-400 truncate max-w-xs" title={app.projectDescription}>
+                                        <p className="text-sm text-gray-500 line-clamp-2 max-w-xs" title={app.projectDescription}>
                                             {app.projectDescription}
                                         </p>
                                     </td>
