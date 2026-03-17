@@ -65,7 +65,7 @@ export default function AdminHackathon() {
             } else {
                 setError(data.message || 'Failed to fetch applications')
             }
-        } catch (err) {
+        } catch (_err) {
             setError('Failed to connect to the server')
         } finally {
             setLoading(false)
@@ -111,7 +111,7 @@ export default function AdminHackathon() {
             } else {
                 setError(data.message || 'Failed to delete registration')
             }
-        } catch (err) {
+        } catch (_err) {
             setError('Failed to delete registration')
         } finally {
             setDeleteLoading(null)

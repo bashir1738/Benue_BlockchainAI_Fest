@@ -8,10 +8,7 @@ interface User {
     firstName: string
     lastName: string
     corporateEmail: string
-    company: string
-    position: string
     phone: string
-    whatsapp: string
     industry: string | null
     city: string | null
     country: string | null
@@ -134,16 +131,13 @@ export default function AdminRegistrations() {
     const exportToCSV = () => {
         if (registrations.length === 0) return
 
-        const headers = ['ID', 'First Name', 'Last Name', 'Email', 'Company', 'Position', 'Phone', 'WhatsApp', 'Industry', 'City', 'Country', 'Registration Date']
+        const headers = ['ID', 'First Name', 'Last Name', 'Email', 'Phone', 'Industry', 'City', 'Country', 'Registration Date']
         const rows = registrations.map(user => [
             user.id,
             user.firstName,
             user.lastName,
             user.corporateEmail,
-            user.company,
-            user.position,
             user.phone,
-            user.whatsapp,
             user.industry || '',
             user.city || '',
             user.country || '',
@@ -219,8 +213,8 @@ export default function AdminRegistrations() {
                                 <th className="px-6 py-4">ID</th>
                                 <th className="px-6 py-4">Name</th>
                                 <th className="px-6 py-4">Email</th>
-                                <th className="px-6 py-4">Company</th>
-                                <th className="px-6 py-4">Position</th>
+                                <th className="px-6 py-4">Phone</th>
+                                <th className="px-6 py-4 hidden lg:table-cell">Industry</th>
                                 <th className="px-6 py-4">Country</th>
                                 <th className="px-6 py-4">Date</th>
                                 <th className="px-6 py-4 text-right">Actions</th>
@@ -232,8 +226,8 @@ export default function AdminRegistrations() {
                                     <td className="px-6 py-4 font-mono text-sm text-gray-500">{user.id}</td>
                                     <td className="px-6 py-4 font-medium text-gray-900">{user.firstName} {user.lastName}</td>
                                     <td className="px-6 py-4">{user.corporateEmail}</td>
-                                    <td className="px-6 py-4">{user.company}</td>
-                                    <td className="px-6 py-4">{user.position}</td>
+                                    <td className="px-6 py-4">{user.phone}</td>
+                                    <td className="px-6 py-4 hidden lg:table-cell">{user.industry || '-'}</td>
                                     <td className="px-6 py-4">{user.country || '-'}</td>
                                     <td className="px-6 py-4 text-gray-500 text-sm">{formatDate(user.createdAt)}</td>
                                     <td className="px-6 py-4 text-right">
