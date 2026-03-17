@@ -20,3 +20,4 @@ test_routes.sh
 /bin/
 .agents/
 skills-lock.json
+/test-email.js
