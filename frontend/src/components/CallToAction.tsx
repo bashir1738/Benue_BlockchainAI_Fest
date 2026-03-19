@@ -27,7 +27,7 @@ export default function CallToAction() {
                         <div className="bg-white rounded-4xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-gray-100 flex flex-col h-full group">
                             <div className="h-64 sm:h-80 md:h-96 w-full bg-gray-100 overflow-hidden relative">
                                 <img
-                                    src="/showcase.png"
+                                    src="/showcase.jpeg"
                                     alt="Showcase App UI"
                                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)]"
                                 />
@@ -57,7 +57,7 @@ export default function CallToAction() {
                         <div className="bg-white rounded-4xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-gray-100 flex flex-col h-full group">
                             <div className="h-64 sm:h-80 md:h-96 w-full bg-gray-100 overflow-hidden relative">
                                 <img
-                                    src="/speaker.png"
+                                    src="/speaker.jpeg"
                                     alt="Speaker on Stage"
                                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)]"
                                 />
