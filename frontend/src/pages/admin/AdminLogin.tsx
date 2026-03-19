@@ -124,14 +124,14 @@ export default function AdminLogin() {
                                 type="email"
                                 value={email}
                                 onChange={(e) => {
-                                    setEmail(e.target.value)
+                                    setEmail(e.target.value.trim())
                                     if (errors.email) setErrors(prev => ({ ...prev, email: undefined }))
                                 }}
                                 className={`w-full bg-gray-50 border ${errors.email ? 'border-red-400 focus:border-red-500 focus:ring-red-500' : 'border-gray-200 focus:border-primary focus:ring-primary'} rounded-xl px-5 py-4 focus:outline-none focus:ring-1 transition-all text-gray-900`}
                                 placeholder="Enter admin email..."
                             />
                             {errors.email && <p className="mt-1 text-sm text-red-600">{errors.email}</p>}
-                            <p className="text-xs text-gray-400 mt-2 font-light">Hint: admin@benuefest.com</p>
+                            <p className="text-xs text-gray-400 mt-2 font-light">Hint: admin@benueblockchainfest.com</p>
                         </div>
 
                         <div className="mb-10">
@@ -148,7 +148,7 @@ export default function AdminLogin() {
                                 placeholder="Enter password..."
                             />
                             {errors.password && <p className="mt-1 text-sm text-red-600">{errors.password}</p>}
-                            <p className="text-xs text-gray-400 mt-2 font-light">Hint: admin123</p>
+                            <p className="text-xs text-gray-400 mt-2 font-light">Hint: Look###Admin@</p>
                         </div>
 
                         <button
