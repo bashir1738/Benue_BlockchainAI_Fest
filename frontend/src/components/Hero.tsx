@@ -11,7 +11,7 @@ export default function Hero() {
             {/* MESH GRID PATTERN */}
             <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-size-[40px_40px] mask-[radial-gradient(ellipse_60%_60%_at_50%_50%,black_40%,transparent_100%)] pointer-events-none"></div>
 
-            <div className="container mx-auto px-4 sm:px-6 relative z-10 w-full max-w-8xl flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+            <div className="container mx-auto px-4 sm:px-6 relative z-10 w-full max-w-6xl flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
 
                 {/* LEFT CONTENT BLOCK */}
                 <div className="w-full lg:w-[55%] flex flex-col relative">

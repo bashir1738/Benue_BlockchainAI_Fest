@@ -28,7 +28,7 @@ export default function Header() {
             className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-4 md:px-8 
             ${isScrolled || mobileMenuOpen ? 'py-3' : 'py-5'}`}
         >
-            <div className={`mx-auto max-w-7xl transition-all duration-500 overflow-hidden border border-white/5 bg-secondary/80 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.3)]
+            <div className={`mx-auto max-w-[1500px] transition-all duration-500 overflow-hidden border border-white/5 bg-secondary/80 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.3)]
                 ${mobileMenuOpen ? 'rounded-3xl' : 'rounded-2xl md:rounded-full'}
                 `}>
                 <div className="flex items-center justify-between px-10 py-3 relative z-10">
