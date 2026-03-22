@@ -11,7 +11,7 @@ const speakers = [
     {
         name: 'Hon. Dr. Cletus Bako Shurkuk',
         role: 'Hon. Commissioner of Innovation, Science and Technology',
-        company: 'Plateau State',
+        company: 'Benue State',
         photo: '/Hon. Dr. Cletus Bako Shurkuk.jpeg'
     },
     {
