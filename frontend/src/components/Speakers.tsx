@@ -1,12 +1,30 @@
 import Reveal from './Reveal';
 
 const speakers = [
-    { name: 'To be Announced', role: 'Blockchain Strategy', company: 'Global Tech Lead' },
-    { name: 'To be Announced', role: 'AI Researcher', company: 'Innovation Lab' },
-    { name: 'To be Announced', role: 'Web3 Developer', company: 'DeFi protocol' },
-    { name: 'To be Announced', role: 'Venture Capitalist', company: 'Tech Fund' },
-    { name: 'To be Announced', role: 'Product Designer', company: 'UX Masters' },
-    { name: 'To be Announced', role: 'Ecosystem Growth', company: 'Network Foundation' },
+    {
+        name: 'Rev. Fr. Dr. Hyacinth Iormem Alia',
+        role: 'Executive Governor',
+        company: 'Benue State',
+        photo: '/Governor Hyacinth Alia .jpg'
+    },
+    {
+        name: 'Hon. Dr. Cletus Bako Shurkuk',
+        role: 'Hon. Commissioner of Innovation, Science and Technology',
+        company: 'Plateau State',
+        photo: '/Hon. Dr. Cletus Bako Shurkuk.jpeg'
+    },
+    {
+        name: 'Hon. Kwaghgba Amande',
+        role: 'Hon. Commissioner for Communications, Innovation, and Digital Economy',
+        company: 'Benue State',
+        photo: '/Hon. Kwaghgba Amande.png'
+    },
+    {
+        name: ' Hon. Terwase Gbande-Hembaor (also referred to as Gbande Hembaor Terwase).',
+        role: 'Director General/CEO',
+        company: 'Benue Digital Infrastructure Company (BDIC)',
+        photo: '/Hon. Terwase Gbande-Hembaor.jpeg'
+    }
 ];
 
 export default function Speakers() {
@@ -20,7 +38,7 @@ export default function Speakers() {
                     <div className="flex flex-col items-center text-center mb-16 md:mb-24">
                         <span className="text-xs md:text-sm font-semibold tracking-widest text-primary uppercase mb-6">World-Class Insights</span>
                         <h2 className="text-4xl md:text-5xl lg:text-[54px] font-medium text-white leading-tight mb-8 tracking-tight">
-                            Meet Our Speakers
+                            Meet Our Stakeholders
                         </h2>
                         <p className="text-gray-400 text-lg md:text-xl leading-relaxed font-light max-w-2xl">
                             We're bringing together the brightest minds in Blockchain and AI to share their knowledge and vision for the future of Africa.
@@ -28,23 +46,26 @@ export default function Speakers() {
                     </div>
                 </Reveal>
 
-                <div className="flex md:grid overflow-x-auto md:overflow-hidden flex-nowrap md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-12 pb-8 md:pb-0 snap-x snap-mandatory scrollbar-none -mx-4 px-4 sm:-mx-6 sm:px-6 md:mx-0 md:px-0">
+                <div className="flex md:grid overflow-x-auto md:overflow-hidden flex-nowrap md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-12 pb-8 md:pb-0 snap-x snap-mandatory scrollbar-none -mx-4 px-4 sm:-mx-6 sm:px-6 md:mx-0 md:px-0">
                     {speakers.map((speaker, i) => (
-                        <Reveal key={i} delay={i * 100} className="shrink-0 w-[75vw] sm:w-[50vw] md:w-auto snap-center">
-                            <div className="group relative bg-white/5 border border-white/10 rounded-3xl overflow-hidden transition-all duration-500 mr-2 md:mr-0">
-                                {/* IMAGE PLACEHOLDER */}
-                                <div className="aspect-video bg-white/5 relative flex items-center justify-center overflow-hidden">
-                                    {/* ABSTRACT ICON PLACEHOLDER */}
-                                    <div className="relative z-20 w-16 h-16 border-2 border-white/20 rounded-full flex items-center justify-center transition-colors duration-500">
-                                        <div className="w-10 h-10 bg-white/10 rounded-full animate-pulse"></div>
-                                    </div>
+                        <Reveal key={i} delay={i * 100} className="shrink-0 w-[80vw] sm:w-[50vw] md:w-auto snap-center flex flex-col">
+                            <div className="group relative bg-white/5 border border-white/10 rounded-3xl overflow-hidden transition-all duration-500 mr-2 md:mr-0 grow flex flex-col">
+                                {/* IMAGE OR PLACEHOLDER */}
+                                <div className="aspect-4/5 sm:aspect-3/4 bg-white/5 relative flex items-center justify-center overflow-hidden">
+                                    {speaker.photo ? (
+                                        <img src={speaker.photo} alt={speaker.name} className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
+                                    ) : (
+                                        <div className="relative z-20 w-16 h-16 border-2 border-white/20 rounded-full flex items-center justify-center transition-colors duration-500">
+                                            <div className="w-10 h-10 bg-white/10 rounded-full animate-pulse"></div>
+                                        </div>
+                                    )}
                                 </div>
                                 
-                                <div className="p-8 relative z-20">
-                                    <h3 className="text-2xl font-bold text-white mb-2 transition-colors">{speaker.name}</h3>
-                                    <div className="flex flex-col gap-1">
-                                        <span className="text-primary font-medium text-sm tracking-wide uppercase">{speaker.role}</span>
-                                        <span className="text-gray-400 font-light text-base">{speaker.company}</span>
+                                <div className="p-6 sm:p-8 relative z-20 grow flex flex-col">
+                                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 transition-colors">{speaker.name}</h3>
+                                    <div className="flex flex-col gap-1 mt-auto">
+                                        <span className="text-primary font-medium text-xs sm:text-sm tracking-wide uppercase">{speaker.role}</span>
+                                        <span className="text-gray-400 font-light text-sm sm:text-base">{speaker.company}</span>
                                     </div>
                                 </div>
                                 
