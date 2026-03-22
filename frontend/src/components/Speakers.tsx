@@ -46,7 +46,7 @@ export default function Speakers() {
                     </div>
                 </Reveal>
 
-                <div className="flex md:grid overflow-x-auto md:overflow-hidden flex-nowrap md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-12 pb-8 md:pb-0 snap-x snap-mandatory scrollbar-none -mx-4 px-4 sm:-mx-6 sm:px-6 md:mx-0 md:px-0">
+                <div className="flex md:grid overflow-x-auto overflow-y-hidden touch-pan-y md:overflow-hidden flex-nowrap md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-12 pb-8 md:pb-0 snap-x snap-mandatory scrollbar-none -mx-4 px-4 sm:-mx-6 sm:px-6 md:mx-0 md:px-0">
                     {speakers.map((speaker, i) => (
                         <Reveal key={i} delay={i * 100} className="shrink-0 w-[80vw] sm:w-[50vw] md:w-auto snap-center flex flex-col">
                             <div className="group relative bg-white/5 border border-white/10 rounded-3xl overflow-hidden transition-all duration-500 mr-2 md:mr-0 grow flex flex-col">
