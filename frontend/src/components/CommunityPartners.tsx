@@ -29,19 +29,23 @@ export default function CommunityPartners() {
                 </Reveal>
 
                 <Reveal delay={200}>
-                    <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-8 md:gap-12 items-center justify-items-center">
-                        {partners.map((partner, i) => (
-                            <div 
-                                key={i} 
-                                className="w-full max-w-[180px]  transition-all duration-500  transform hover:scale-120"
-                            >
-                                <img 
-                                    src={partner.logo} 
-                                    alt={partner.name} 
-                                    className="w-full h-auto object-contain max-h-40"
-                                />
-                            </div>
-                        ))}
+                    <div className="relative flex overflow-hidden w-full 
+                        before:absolute before:left-0 before:top-0 before:z-10 before:h-full before:w-20 before:bg-linear-to-r before:from-white before:to-transparent 
+                        after:absolute after:right-0 after:top-0 after:z-10 after:h-full after:w-20 after:bg-linear-to-l after:from-white after:to-transparent">
+                        <div className="flex w-max animate-marquee pause-on-hover items-center py-6">
+                            {[...partners, ...partners].map((partner, i) => (
+                                <div 
+                                    key={i} 
+                                    className="px-8 w-[220px] shrink-0 transition-all duration-500 transform hover:scale-110 flex items-center justify-center"
+                                >
+                                    <img 
+                                        src={partner.logo} 
+                                        alt={partner.name} 
+                                        className="w-full h-auto object-contain max-h-32 hover:opacity-100 transition-all duration-500"
+                                    />
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </Reveal>
 
