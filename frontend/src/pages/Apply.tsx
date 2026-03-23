@@ -307,7 +307,7 @@ export default function Apply() {
                                 Welcome. <br className="hidden sm:block" /> <span className="text-gray-400 italic font-light">Join the movement.</span>
                             </h1>
                             <p className="text-gray-500 text-lg md:text-xl font-light max-w-2xl mx-auto leading-[1.8]">
-                                Whether you're building, showcasing, or speaking, join the ecosystem at Benue Fest 2025.
+                                Whether you're building, showcasing, or speaking, join the ecosystem at Benue Fest 2026.
                             </p>
                         </div>
                     </Reveal>
