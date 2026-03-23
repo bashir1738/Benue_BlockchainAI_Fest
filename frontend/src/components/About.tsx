@@ -36,7 +36,7 @@ export default function About() {
                             </div>
 
                             <div className="flex flex-col justify-end">
-                                <div className="border-l-[3px] border-primary pl-6">
+                                <div className="border-l-[3px] border-red pl-6">
                                     <p className="text-gray-500 text-lg font-light leading-[1.8]">
                                         Benue Fest will focus on the technology, its real-world use, its impact on daily lives, and its possibilities. It's not just a conference but a platform to bring your craziest ideas to life.
                                     </p>

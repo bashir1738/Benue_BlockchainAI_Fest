@@ -31,16 +31,10 @@ export default function Header() {
             <div className={`mx-auto max-w-7xl transition-all duration-500 overflow-hidden border border-white/5 bg-secondary/80 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.3)]
                 ${mobileMenuOpen ? 'rounded-3xl' : 'rounded-2xl md:rounded-full'}
                 `}>
-                <div className="flex items-center justify-between px-6 py-3 relative z-10">
+                <div className="flex items-center justify-between px-10 py-3 relative z-10">
                     {/* LOGO */}
                     <Link to="/" onClick={() => setMobileMenuOpen(false)} className="flex flex-col group relative z-50 shrink-0">
-                        <h1 className="text-lg md:text-xl font-mono font-black text-white tracking-tighter leading-none transition-colors">
-                            BENUE 
-                            <span className="text-primary transition-colors ml-1">BLOCKCHAIN</span>
-                        </h1>
-                        <p className="text-primary/70 uppercase tracking-[0.2em] mt-0.5">
-                            & AI Fest
-                        </p>
+                        <img src="/logo.png" alt="Logo" className="w-24 h-16" />
                     </Link>
 
                     {/* DESKTOP NAV (PILL SHAPE) */}

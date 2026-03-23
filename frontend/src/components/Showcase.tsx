@@ -34,7 +34,7 @@ export default function Showcase() {
                                 { val: 'Tour', title: 'Cultural Heritage', desc: 'Explore the beauty of Benue.' },
                                 { val: '72hr', title: 'Live Hackathon', desc: 'Non-stop building.' },
                             ].map((stat, i) => (
-                                <div key={i} className="flex flex-col border-l-[3px] border-gray-100 pl-6 hover:border-primary transition-colors duration-500 py-1">
+                                <div key={i} className="flex flex-col border-l-[3px] border-gray-100 pl-6 hover:border-red transition-colors duration-500 py-1">
                                     <h3 className="text-3xl md:text-4xl font-light text-gray-900 mb-2">{stat.val}</h3>
                                     <h4 className="text-lg font-medium text-gray-800 mb-1">{stat.title}</h4>
                                     <p className="text-gray-400 text-sm font-light leading-relaxed">{stat.desc}</p>

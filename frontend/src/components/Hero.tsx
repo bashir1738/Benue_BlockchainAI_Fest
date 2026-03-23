@@ -5,7 +5,7 @@ import { FaArrowRight } from 'react-icons/fa'
 
 export default function Hero() {
     return (
-        <section className="relative bg-secondary min-h-[90vh] flex flex-col justify-center overflow-hidden pt-30 pb-16 lg:pt-32 border-t border-white/5">
+        <section className="relative bg-secondary min-h-[90vh] flex flex-col justify-center overflow-hidden pt-30 pb-24 lg:pt-32 border-t border-white/5">
 
 
             {/* MESH GRID PATTERN */}

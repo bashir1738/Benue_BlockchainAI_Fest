@@ -50,7 +50,7 @@ export default function KeyHighlights() {
                                 </div>
                                 <div className="h-full flex flex-col justify-end relative z-10">
                                     <h3 className="text-2xl lg:text-3xl font-bold text-background mb-6 leading-tight max-w-[80%]">{card.title}</h3>
-                                    <div className="w-12 h-1 bg-primary mb-8 group-hover:w-full transition-all duration-700"></div>
+                                    <div className="w-12 h-1 bg-red mb-8 group-hover:w-full transition-all duration-700"></div>
                                     <p className="text-gray-500 text-base lg:text-lg leading-relaxed font-light">
                                         {card.text}
                                     </p>

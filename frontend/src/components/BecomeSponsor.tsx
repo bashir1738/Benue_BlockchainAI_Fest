@@ -19,7 +19,7 @@ export default function BecomeSponsor() {
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
                             <a 
                                 href="mailto:partnerships@benueblockchainfest.com"
-                                className="w-full sm:w-auto flex items-center justify-center gap-3 bg-secondary hover:bg-primary text-white font-bold py-4 px-10 rounded-full transition-all duration-300 transform hover:-translate-y-1 shadow-xl"
+                                className="w-full sm:w-auto flex items-center justify-center gap-3 bg-secondary hover:bg-primary text-white font-bold py-4 px-10 rounded-full transition-all duration-300 transform hover:-translate-y-1 shadow-sm hover:shadow-lg"
                             >
                                 <HiMail className="text-2xl" />
                                 Sponsor Benue Fest
@@ -29,7 +29,7 @@ export default function BecomeSponsor() {
                                 href="https://t.me/BenueBlockchainAI"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="w-full sm:w-auto flex items-center justify-center gap-3 bg-white text-secondary border-2 border-secondary/10 hover:border-primary/50 hover:text-primary font-bold py-4 px-10 rounded-full transition-all duration-300 transform hover:-translate-y-1 shadow-md hover:shadow-xl"
+                                className="w-full sm:w-auto flex items-center justify-center gap-3 bg-white text-secondary border-2 border-secondary/10 hover:border-primary/50 hover:text-primary font-bold py-4 px-10 rounded-full transition-all duration-300 transform hover:-translate-y-1 shadow-sm hover:shadow-lg"
                             >
                                 <FaTelegram className="text-2xl" />
                                 Join Telegram Group

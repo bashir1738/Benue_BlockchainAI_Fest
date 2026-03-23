@@ -27,7 +27,7 @@ export default function RegistrationCards() {
                         {/* Card 1 */}
                         <Link to="/register" className="bg-gray-50 rounded-4xl p-10 md:p-14 w-full flex flex-col justify-between border border-gray-100 transform transition-all duration-500 hover:shadow-xl hover:-translate-y-2 group cursor-pointer relative overflow-hidden">
                             <div className="absolute top-0 right-0 p-8">
-                                <span className="text-gray-300 text-6xl md:text-[100px] font-black opacity-30 group-hover:text-primary group-hover:opacity-10 transition-all duration-500 leading-none">01</span>
+                                <span className="text-gray-300 text-6xl md:text-[100px] font-black opacity-30 group-hover:text-red group-hover:opacity-10 transition-all duration-500 leading-none">01</span>
                             </div>
 
                             <div className="relative z-10 flex flex-col h-full min-h-55">
@@ -46,7 +46,7 @@ export default function RegistrationCards() {
                         {/* Card 2 */}
                         <Link to="/apply?type=hackathon" className="bg-background rounded-4xl p-10 md:p-14 w-full flex flex-col justify-between transform transition-all duration-500  hover:shadow-xl hover:-translate-y-2 group cursor-pointer relative overflow-hidden">
                             <div className="absolute top-0 right-0 p-8">
-                                <span className="text-white text-6xl md:text-[100px] font-black opacity-20 group-hover:opacity-30 transition-all duration-500 leading-none">02</span>
+                                <span className="text-white text-6xl md:text-[100px] font-black opacity-20 group-hover:text-red group-hover:opacity-30 transition-all duration-500 leading-none">02</span>
                             </div>
 
                             <div className="relative z-10 flex flex-col h-full min-h-55">

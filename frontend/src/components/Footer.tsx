@@ -8,16 +8,9 @@ export default function Footer() {
             <div className="container mx-auto px-4 sm:px-6 lg:px-12 w-full max-w-8xl relative z-10">
 
                 {/* TOP HEADER / BRANDING BLOCK */}
-                <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-20 gap-10">
-                    <div className="flex flex-col">
-                        <Link to="/" className="group cursor-pointer mb-6">
-                            <h2 className="text-3xl md:text-5xl font-black text-white tracking-tighter leading-none mb-2 transition-colors duration-300">
-                                BENUE BLOCKCHAIN <span className="text-primary group-hover:text-white transition-colors duration-300">&  AI FEST</span>
-                            </h2>
-                            <p className="text-primary/70 font-mono text-xs uppercase tracking-widest group-hover:text-primary transition-colors duration-300">
-                                {'{ BLOCKCHAIN & AI CONFERENCE }'}
-                            </p>
-                        </Link>
+                <div className="flex flex-col md:flex-row justify-between items-center md:items-end mb-20 gap-10">
+                    <div className="flex flex-col items-center md:items-start md:text-left text-center">
+                        <img src="/logo3.png" alt="Logo" className="w-24 h-20 mb-5" />
                         <p className="text-white/60 text-lg font-light leading-relaxed max-w-md">
                             Join us at the inaugural Benue Blockchain AI Fest. Building the next billion users through groundbreaking technology.
                         </p>
@@ -25,33 +18,33 @@ export default function Footer() {
 
                     {/* SOCIALS */}
                     <div className="flex items-center gap-4">
-                        <a 
-                            href="https://t.me/BenueBlockchainAI" 
-                            target="_blank" 
+                        <a
+                            href="https://t.me/BenueBlockchainAI"
+                            target="_blank"
                             rel="noopener noreferrer"
                             className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white/50 hover:border-primary hover:text-primary hover:bg-primary/10 transition-all duration-300"
                         >
                             <FaTelegram className="text-lg" />
                         </a>
-                        <a 
-                            href="https://x.com/BBAIFestival" 
-                            target="_blank" 
+                        <a
+                            href="https://x.com/BBAIFestival"
+                            target="_blank"
                             rel="noopener noreferrer"
                             className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white/50 hover:border-primary hover:text-primary hover:bg-primary/10 transition-all duration-300"
                         >
                             <FaXTwitter className="text-lg" />
                         </a>
-                        <a 
-                            href="https://www.facebook.com/share/1B26MYg4WD/" 
-                            target="_blank" 
+                        <a
+                            href="https://www.facebook.com/share/1B26MYg4WD/"
+                            target="_blank"
                             rel="noopener noreferrer"
                             className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white/50 hover:border-primary hover:text-primary hover:bg-primary/10 transition-all duration-300"
                         >
                             <FaFacebookF className="text-lg" />
                         </a>
-                        <a 
-                            href="https://youtube.com/@bbaifestival" 
-                            target="_blank" 
+                        <a
+                            href="https://youtube.com/@bbaifestival"
+                            target="_blank"
                             rel="noopener noreferrer"
                             className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white/50 hover:border-primary hover:text-primary hover:bg-primary/10 transition-all duration-300"
                         >
@@ -61,7 +54,7 @@ export default function Footer() {
                 </div>
 
                 {/* BOTTOM LINKS & COPYRIGHT */}
-                <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/10 gap-6">
+                <div className="flex flex-col md:flex-row justify-between items-center md:items-end text-center md:text-left pt-8 border-t border-white/10 gap-6">
                     <p className="text-white/40 text-sm font-light">
                         © {new Date().getFullYear()} Benue Blockchain AI Fest. All rights reserved.
                     </p>

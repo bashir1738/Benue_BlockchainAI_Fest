@@ -23,7 +23,7 @@ const FAQItem = ({ question, answer, isOpen, onClick, index }: FAQItemProps) => 
                     onClick={onClick}
                     className="flex w-full items-center justify-between p-6 text-left transition-all focus:outline-none"
                 >
-                    <span className={`text-lg md:text-xl font-medium transition-colors duration-300 ${isOpen ? 'text-primary' : 'text-white/80 group-hover:text-white'}`}>
+                    <span className={`text-lg md:text-xl font-medium transition-colors duration-300 ${isOpen ? 'text-white' : 'text-white/80 group-hover:text-white'}`}>
                         {question}
                     </span>
                     <div
@@ -32,7 +32,7 @@ const FAQItem = ({ question, answer, isOpen, onClick, index }: FAQItemProps) => 
                             : 'border-white/10 bg-white/5 text-white/50 group-hover:border-white/30 group-hover:text-white'
                             }`}
                     >
-                        <HiChevronDown className="h-6 w-6" />
+                        <HiChevronDown className={`h-6 w-6 transition-transform duration-500 ${isOpen ? 'rotate-180' : ''}`} />
                     </div>
                 </button>
                 <div
