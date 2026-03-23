@@ -1,6 +1,23 @@
+import { useState, useEffect } from 'react';
 import Reveal from './Reveal'
 
+const STATS_DATA = [
+    { val: '20+', title: 'Web3 & AI companies', desc: 'Meet industry leaders.' },
+    { val: '700+', title: 'Tech Builders', desc: 'A massive developer turnout.' },
+    { val: 'Tour', title: 'Cultural Heritage', desc: 'Explore the beauty of Benue.' },
+    { val: '72hr', title: 'Live Hackathon', desc: 'Non-stop building.' },
+];
+
 export default function Showcase() {
+    const [activeIndex, setActiveIndex] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setActiveIndex((prev) => (prev + 1) % STATS_DATA.length);
+        }, 2000);
+        return () => clearInterval(interval);
+    }, []);
+
     return (
         <section id="location" className="bg-white py-24 md:py-32 xl:py-40">
             <div className="container mx-auto px-4 sm:px-6 w-full max-w-8xl">
@@ -28,13 +45,11 @@ export default function Showcase() {
                     <Reveal delay={200}>
                         <div className="w-full lg:min-w-100 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-x-8 gap-y-12">
 
-                            {[
-                                { val: '20+', title: 'Web3 & AI companies', desc: 'Meet industry leaders.' },
-                                { val: '700+', title: 'Tech Builders', desc: 'A massive developer turnout.' },
-                                { val: 'Tour', title: 'Cultural Heritage', desc: 'Explore the beauty of Benue.' },
-                                { val: '72hr', title: 'Live Hackathon', desc: 'Non-stop building.' },
-                            ].map((stat, i) => (
-                                <div key={i} className="flex flex-col border-l-[3px] border-gray-100 pl-6 hover:border-red transition-colors duration-500 py-1">
+                            {STATS_DATA.map((stat, i) => (
+                                <div 
+                                    key={i} 
+                                    className={`flex flex-col border-l-[3px] pl-6 hover:border-red transition-colors duration-500 py-1 ${activeIndex === i ? 'border-red' : 'border-gray-100'}`}
+                                >
                                     <h3 className="text-3xl md:text-4xl font-light text-gray-900 mb-2">{stat.val}</h3>
                                     <h4 className="text-lg font-medium text-gray-800 mb-1">{stat.title}</h4>
                                     <p className="text-gray-400 text-sm font-light leading-relaxed">{stat.desc}</p>

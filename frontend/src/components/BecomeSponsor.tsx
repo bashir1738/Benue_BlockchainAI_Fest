@@ -1,6 +1,6 @@
 import Reveal from './Reveal';
 import { HiMail } from 'react-icons/hi';
-import { FaTelegram } from 'react-icons/fa6';
+import { FaWhatsapp } from 'react-icons/fa6';
 
 export default function BecomeSponsor() {
     return (
@@ -26,13 +26,13 @@ export default function BecomeSponsor() {
                             </a>
                             
                             <a 
-                                href="https://t.me/BenueBlockchainAI"
+                                href="https://chat.whatsapp.com/K0RNdkd6FPJEAEKaHTHUQ7"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="w-full sm:w-auto flex items-center justify-center gap-3 bg-white text-secondary border-2 border-secondary/10 hover:border-primary/50 hover:text-primary font-bold py-4 px-10 rounded-full transition-all duration-300 transform hover:-translate-y-1 shadow-sm hover:shadow-lg"
                             >
-                                <FaTelegram className="text-2xl" />
-                                Join Telegram Group
+                                <FaWhatsapp className="text-2xl text-[#25D366]" />
+                                Join WhatsApp Group
                             </a>
                         </div>
                     </div>

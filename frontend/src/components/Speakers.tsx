@@ -9,6 +9,12 @@ const speakers = [
         photo: '/Governor Hyacinth Alia .jpg'
     },
     {
+        name: 'Barr. Dr. Sam Ode',
+        role: 'Deputy Governor',
+        company: 'Benue State',
+        photo: '/Deputy Gov Dr Sam Ode.jpg.jpeg'
+    },
+    {
         name: 'Hon. Dr. Cletus Bako Shurkuk',
         role: 'Hon. Commissioner of Innovation, Science and Technology',
         company: 'Benue State',
@@ -21,11 +27,13 @@ const speakers = [
         photo: '/Hon. Kwaghgba Amande.png'
     },
     {
-        name: ' Hon. Terwase Gbande-Hembaor (also referred to as Gbande Hembaor Terwase).',
+        name: ' Hon. Terwase Gbande-Hembaor (also referred to as Gbande Hembaor Terwase)',
         role: 'Director General/CEO',
         company: 'Benue Digital Infrastructure Company (BDIC)',
         photo: '/Hon. Terwase Gbande-Hembaor.jpeg'
-    }
+    },
+    
+    
 ];
 
 export default function Speakers() {
