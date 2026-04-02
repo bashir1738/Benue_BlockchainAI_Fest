@@ -14,12 +14,7 @@ const speakers = [
         company: 'Benue State',
         photo: '/Deputy Gov Dr Sam Ode.jpg.jpeg'
     },
-    {
-        name: 'Hon. Dr. Cletus Bako Shurkuk',
-        role: 'Hon. Commissioner of Innovation, Science and Technology',
-        company: 'Benue State',
-        photo: '/Hon. Dr. Cletus Bako Shurkuk.jpeg'
-    },
+
     {
         name: 'Hon. Kwaghgba Amande',
         role: 'Hon. Commissioner for Communications, Innovation, and Digital Economy',
