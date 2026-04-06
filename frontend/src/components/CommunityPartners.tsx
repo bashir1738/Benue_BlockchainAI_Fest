@@ -2,7 +2,7 @@ import Reveal from './Reveal';
 
 const partners = [
     { name: 'Partner 1', logo: '/p1.png' },
-    { name: 'Partner 4', logo: '/p4.jpeg' },
+    // { name: 'Partner 4', logo: '/p4.jpeg' },
     { name: 'Partner 7', logo: '/p7.jpeg' },
     { name: 'Partner 5', logo: '/p5.jpeg' },
     { name: 'Partner 6', logo: '/p6.jpeg' },
