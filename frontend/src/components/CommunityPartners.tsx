@@ -2,7 +2,6 @@ import Reveal from './Reveal';
 
 const partners = [
     { name: 'Partner 1', logo: '/p1.png' },
-    // { name: 'Partner 4', logo: '/p4.jpeg' },
     { name: 'Partner 7', logo: '/p7.jpeg' },
     { name: 'Partner 5', logo: '/p5.jpeg' },
     { name: 'Partner 6', logo: '/p6.jpeg' },
@@ -59,12 +58,24 @@ export default function CommunityPartners() {
                             <p className="text-gray-400 text-lg font-light">Join us in shaping the future of Blockchain and AI in Benue.</p>
                         </div>
                         
+                        <div className="flex flex-col sm:flex-row items-center gap-4 relative z-10 w-full md:w-auto">
                             <a  
-                                href="mailto:bbaifestival@gmail.com"
-                            className="relative z-10 bg-primary hover:bg-white text-secondary font-bold py-4 px-10 rounded-full transition-all duration-300 shadow-xl hover:shadow-lg transform hover:-translate-y-1"
+                                href="https://forms.gle/WyhMvcbfyfuUhHLq5"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="w-full sm:w-auto bg-primary hover:bg-white text-secondary font-bold py-4 px-10 rounded-full transition-all duration-300 shadow-xl hover:shadow-lg transform hover:-translate-y-1 text-center"
                             >
                                 Partner with Us
                             </a>
+                            <a  
+                                href="https://forms.gle/kHFWK2qf6m7Uec2a8"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white font-bold py-4 px-10 rounded-full border border-white/20 transition-all duration-300 backdrop-blur-md transform hover:-translate-y-1 text-center"
+                            >
+                                Join as Volunteer
+                            </a>
+                        </div>
                         </div>
                 </Reveal>
             </div>

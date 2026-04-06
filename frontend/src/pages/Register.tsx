@@ -341,7 +341,7 @@ export default function Register() {
                                 Secure Your <span className="text-primary italic font-light">Spot.</span>
                             </h1>
                             <p className="text-gray-500 text-lg md:text-xl font-light max-w-xl mx-auto leading-[1.8]">
-                                Join hundreds of builders, innovators, and creators at the Benue Fest 2026.
+                                Join hundreds of builders, innovators, and creators at the Benue Fest TBA.
                             </p>
                         </div>
                     </Reveal>
