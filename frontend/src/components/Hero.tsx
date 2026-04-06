@@ -21,7 +21,7 @@ export default function Hero() {
                                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary"></span>
                             </span>
-                            <span className="text-white text-xs md:text-sm font-medium tracking-wider uppercase">Benue, Nigeria • JUN 17-21, 2026</span>
+                            <span className="text-white text-xs md:text-sm font-medium tracking-wider uppercase">Benue, Nigeria • TBA</span>
                         </div>
 
                         <h1 className="text-5xl sm:text-6xl  lg:text-[75px] font-bold text-white leading-[1.05] tracking-tighter mb-8 max-w-2xl">
@@ -43,13 +43,13 @@ export default function Hero() {
                                 Secure Your Ticket
                             </Link>
 
-                            <Link
-                                to="/apply?type=hackathon"
+                            <a
+                                href="#partners"
                                 className="w-full sm:w-auto group flex items-center justify-center gap-3 bg-white/5 hover:bg-white/10 border border-white/20 text-white font-medium text-lg py-4 px-10 rounded-xl transition-all duration-300 backdrop-blur-sm"
                             >
-                                Enter Hackathon
+                                Partner with Us
                                 <FaArrowRight className="text-primary group-hover:translate-x-2 transition-transform" />
-                            </Link>
+                            </a>
                         </div>
                     </Reveal>
                 </div>
@@ -92,20 +92,30 @@ export default function Hero() {
                                 </div>
                                 <div>
                                     <h3 className="text-3xl font-black text-secondary  leading-none mb-6">72-Hour <br /> Hackathon</h3>
-                                    
+
                                     <div className="mb-6">
                                         <Countdown />
                                     </div>
 
-                                    <div className="w-full bg-gray-100 h-2 rounded-full overflow-hidden mt-4">
-                                        <div className="w-[85%] h-full bg-primary rounded-full relative overflow-hidden">
+
+                                    <div className="w-full bg-gray-100 h-2 rounded-full overflow-hidden mt-4 mb-6">
+                                        <div className="w-[75%] h-full bg-primary rounded-full relative overflow-hidden">
                                             <div className="absolute inset-0 bg-white/30 w-full animate-[shimmer_2s_infinite]"></div>
                                         </div>
                                     </div>
+
                                     <div className="flex justify-between items-center mt-2 text-xs font-bold text-gray-400">
                                         <span>Capacity</span>
-                                        <span className="text-secondary">85% Filled</span>
+                                        <span className="text-secondary">75% Filled</span>
                                     </div>
+
+                                    <Link
+                                        to="/apply?type=hackathon"
+                                        className="w-full bg-secondary mt-4 hover:bg-secondary/90 text-white font-medium py-3 px-6 rounded-xl flex items-center justify-center gap-2 transition-all duration-300 "
+                                    >
+                                        Enter Hackathon
+                                        <FaArrowRight className="text-xs" />
+                                    </Link>
                                 </div>
                             </div>
 

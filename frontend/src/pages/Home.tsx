@@ -20,16 +20,16 @@ export default function Home() {
             <main className="grow flex flex-col w-full">
                 <Hero />
                 <Showcase />
+                <CallToAction />
+
                 <EventStructure />
                 <KeyHighlights />
                 <Speakers />
-                <CallToAction />
                 <About />
                 <RegistrationCards />
                 <GallerySlider />
                 <CommunityPartners />
                 <BecomeSponsor />
-
                 <FAQ />
             </main>
             <Footer />
