@@ -111,7 +111,7 @@ export default function Hero() {
 
                                     <Link
                                         to="/apply?type=hackathon"
-                                        className="w-full bg-secondary mt-4 hover:bg-secondary/90 text-white font-medium py-3 px-6 rounded-xl flex items-center justify-center gap-2 transition-all duration-300 "
+                                        className="w-full bg-background mt-4 hover:bg-background/90 text-white font-medium py-3 px-6 rounded-xl flex items-center justify-center gap-2 transition-all duration-300 "
                                     >
                                         Enter Hackathon
                                         <FaArrowRight className="text-xs" />
