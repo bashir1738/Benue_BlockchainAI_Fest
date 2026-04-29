@@ -16,7 +16,7 @@ export default function CallToAction() {
                         <p className="text-gray-500 text-lg md:text-xl leading-[1.8] font-light">
                             Whether you want to showcase your latest product or share your insights with the community, Benue Fest is your platform.
                         </p>
-                    </div>
+                    </div> 
                 </Reveal>
 
                 {/* CARDS GRID */}
