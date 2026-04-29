@@ -27,7 +27,12 @@ const speakers = [
         company: 'Benue Digital Infrastructure Company (BDIC)',
         photo: '/Hon. Terwase Gbande-Hembaor.jpeg'
     },
-    
+    {
+        name: 'Adaaku Peter Sesugh',
+        role: 'Co-founder/CEO Blockfuse Labs',
+        company: 'Blockfuse Labs',
+        photo: '/blfCEO.jpeg'
+    }
     
 ];
 
