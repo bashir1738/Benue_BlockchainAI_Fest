@@ -14,6 +14,12 @@ const speakers = [
         company: 'Benue State',
         photo: '/Hon. James Dwem.jpeg'
     },
+        {
+        name: 'Mr. Leo-Angelo Viashima',
+        role: 'Director General',
+        company: 'DG, BICD',
+        photo: '/Mr. Leo-Angelo Viashima.jpeg'
+    },
     {
         name: 'Barr. Dr. Sam Ode',
         role: 'Deputy Governor',
@@ -37,14 +43,7 @@ const speakers = [
         name: 'Adaaku Peter Sesugh',
         role: 'Co-founder/CEO Blockfuse Labs',
         company: 'Blockfuse Labs',
-        photo: '/blfCEO.jpeg'
-    },
-
-    {
-        name: 'Mr. Leo-Angelo Viashima',
-        role: 'Director General',
-        company: 'DG, BICD',
-        photo: '/Mr. Leo-Angelo Viashima.jpeg'
+        photo: '/scarface.jpeg'
     },
     {
         name: 'Barr. Ori Adam-Onum',
