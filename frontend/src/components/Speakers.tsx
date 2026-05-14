@@ -9,6 +9,12 @@ const speakers = [
         photo: '/Governor Hyacinth Alia .jpg'
     },
     {
+        name: 'Hon. James Dwem',
+        role: 'Commissioner of Science and Technology',
+        company: 'Benue State',
+        photo: '/Hon. James Dwem.jpeg'
+    },
+    {
         name: 'Barr. Dr. Sam Ode',
         role: 'Deputy Governor',
         company: 'Benue State',
@@ -32,6 +38,19 @@ const speakers = [
         role: 'Co-founder/CEO Blockfuse Labs',
         company: 'Blockfuse Labs',
         photo: '/blfCEO.jpeg'
+    },
+
+    {
+        name: 'Mr. Leo-Angelo Viashima',
+        role: 'Director General',
+        company: 'DG, BICD',
+        photo: '/Mr. Leo-Angelo Viashima.jpeg'
+    },
+    {
+        name: 'Barr. Ori Adam-Onum',
+        role: 'Legal & Compliance',
+        company: 'Benue Blockchain AI Fest',
+        photo: '/Barr. Ori Adam-Onum.jpeg'
     }
     
 ];
@@ -67,7 +86,7 @@ export default function Speakers() {
                 <div className="flex md:grid overflow-x-auto md:overflow-hidden flex-nowrap md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-12 pb-8 md:pb-0 snap-x snap-mandatory scrollbar-none -mx-4 px-4 sm:-mx-6 sm:px-6 md:mx-0 md:px-0">
                     {speakers.map((speaker, i) => {
                         const cardContent = (
-                            <div className="group relative bg-white/5 border border-white/10 rounded-3xl overflow-hidden transition-all duration-500 mr-2 md:mr-0 grow flex flex-col">
+                            <div className="group relative bg-white/5 border border-white/10 rounded-lg overflow-hidden transition-all duration-500 mr-2 md:mr-0 grow flex flex-col">
                                 {/* IMAGE OR PLACEHOLDER */}
                                 <div className="aspect-4/5 sm:aspect-3/4 bg-white/5 relative flex items-center justify-center overflow-hidden">
                                     {speaker.photo ? (
@@ -79,8 +98,8 @@ export default function Speakers() {
                                     )}
                                 </div>
                                 
-                                <div className="p-6 sm:p-8 relative z-20 grow flex flex-col">
-                                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 transition-colors">{speaker.name}</h3>
+                                <div className="p-6 sm:p-8 bg-background relative z-20 grow flex flex-col">
+                                    <p className="text-xl sm:text-2xl font-bold text-white mb-3 transition-colors">{speaker.name}</p>
                                     <div className="flex flex-col gap-1 mt-auto">
                                         <span className="text-primary font-medium text-xs sm:text-sm tracking-wide uppercase">{speaker.role}</span>
                                         <span className="text-gray-400 font-light text-sm sm:text-base">{speaker.company}</span>
