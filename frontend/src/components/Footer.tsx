@@ -12,7 +12,7 @@ export default function Footer() {
     ]
 
     return (
-        <footer className="bg-secondary/50 backdrop-blur-sm  mt-auto">
+        <footer className="bg-secondary backdrop-blur-sm mt-auto">
             <div className="container mx-auto px-4 sm:px-6 lg:px-12 w-full max-w-8xl py-16">
                 
                 <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-12 md:gap-8 mb-12">

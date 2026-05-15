@@ -1,5 +1,4 @@
 import Reveal from './Reveal'
-import Countdown from './Countdown'
 import { Link } from 'react-router-dom'
 import { FaArrowRight } from 'react-icons/fa'
 
@@ -21,7 +20,7 @@ export default function Hero() {
                                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary"></span>
                             </span>
-                            <span className="text-white text-xs md:text-sm font-medium tracking-wider text-center uppercase">Fr. Alia Conference Center, Makurdi • Benue State</span>
+                            <span className="text-white text-xs md:text-sm font-medium tracking-wider text-center uppercase">Location TBA</span>
                         </div>
 
                         <h1 className="text-5xl sm:text-6xl  lg:text-[75px] font-bold text-white leading-[1.05] tracking-tighter mb-8 max-w-2xl">
@@ -94,19 +93,8 @@ export default function Hero() {
                                     <h3 className="text-3xl font-black text-secondary  leading-none mb-6">72-Hour <br /> Hackathon</h3>
 
                                     <div className="mb-6">
-                                        <Countdown />
-                                    </div>
-
-
-                                    <div className="w-full bg-gray-100 h-2 rounded-full overflow-hidden mt-4 mb-6">
-                                        <div className="w-[75%] h-full bg-primary rounded-full relative overflow-hidden">
-                                            <div className="absolute inset-0 bg-white/30 w-full animate-[shimmer_2s_infinite]"></div>
-                                        </div>
-                                    </div>
-
-                                    <div className="flex justify-between items-center mt-2 text-xs font-bold text-gray-400">
-                                        <span>Capacity</span>
-                                        <span className="text-secondary">75% Filled</span>
+                                        <div className="text-3xl md:text-4xl font-black text-secondary leading-none">TBA</div>
+                                        <p className="text-gray-500 text-sm mt-2">Event dates will be announced soon</p>
                                     </div>
 
                                     <Link
