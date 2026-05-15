@@ -9,22 +9,22 @@ const speakers = [
         photo: '/Governor Hyacinth Alia .jpg'
     },
     {
-        name: 'Barr. Dr. Sam Ode',
-        role: 'Deputy Governor',
-        company: 'Benue State',
-        photo: '/Deputy Gov Dr Sam Ode.jpg.jpeg'
-    },
-    {
         name: 'Hon. James Dwem',
         role: 'Commissioner of Science and Technology',
         company: 'Benue State',
         photo: '/Hon. James Dwem.jpeg'
     },
-        {
+    {
         name: 'Mr. Leo-Angelo Viashima',
         role: 'Director General',
         company: 'DG, BICD',
         photo: '/Mr. Leo-Angelo Viashima.jpeg'
+    },
+    {
+        name: 'Barr. Dr. Sam Ode',
+        role: 'Deputy Governor',
+        company: 'Benue State',
+        photo: '/Deputy Gov Dr Sam Ode.jpg.jpeg'
     },
     {
         name: 'Barr. Ori Adam-Onum',
@@ -32,7 +32,7 @@ const speakers = [
         company: 'Benue Blockchain AI Fest',
         photo: '/Barr. Ori Adam-Onum.jpeg'
     },
-      {
+    {
         name: 'Adaaku Peter Sesugh',
         role: 'Co-founder/CEO Blockfuse Labs',
         company: 'Blockfuse Labs',
@@ -49,7 +49,7 @@ const speakers = [
         role: 'Director General/CEO',
         company: 'Benue Digital Infrastructure Company (BDIC)',
         photo: '/Hon. Terwase Gbande-Hembaor.jpeg'
-    }   
+    }
 ];
 
 export default function Speakers() {
