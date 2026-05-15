@@ -8,7 +8,7 @@ const partners = [
     { name: 'Partner 8', logo: '/p8.png' },
     { name: 'Partner 2', logo: '/p2.jpeg' },
     { name: 'Partner 3', logo: '/p3.jpeg' },
-    { name: 'Partner 9', logo: '/p9.jpeg' },
+    // { name: 'Partner 9', logo: '/p9.jpeg' },
 ];
 
 export default function CommunityPartners() {
