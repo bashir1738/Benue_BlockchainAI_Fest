@@ -41,11 +41,11 @@ export default function Footer() {
                         <div className="space-y-4 text-sm">
                             <div>
                                 <p className="text-primary/80 text-xs font-medium mb-1">Labs</p>
-                                <p className="text-white/60">July 27-29</p>
+                                <p className="text-white/60">TBA</p>
                             </div>
                             <div>
                                 <p className="text-primary/80 text-xs font-medium mb-1">Conference</p>
-                                <p className="text-white/60">July 30-31</p>
+                                <p className="text-white/60">TBA</p>
                             </div>
                         </div>
                     </div>
