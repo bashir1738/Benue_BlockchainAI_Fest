@@ -19,7 +19,7 @@ export default function Showcase() {
     }, []);
 
     return (
-        <section id="location" className="bg-white py-24 md:py-32 xl:py-40">
+        <section id="location" className="bg-white py-20">
             <div className="container mx-auto px-4 sm:px-6 w-full max-w-8xl">
 
                 {/* TOP HEADER & STATS */}
@@ -33,7 +33,7 @@ export default function Showcase() {
                                 Products Showcase <br className="hidden md:block" /> & Hackathon
                             </h2>
                             <p className="text-gray-500 text-lg md:text-xl leading-[1.8] font-light">
-                                Benue Blockchain AI Fest TBA in its inaugural edition aims to
+                                Benue Blockchain AI Fest 2026 in its inaugural edition aims to
                                 spotlight innovation in Blockchain and AI technology and
                                 use through groundbreaking and useful products
                                 built to onboard the next billion users.

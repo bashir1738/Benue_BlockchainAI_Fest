@@ -81,7 +81,7 @@ const FAQ = () => {
     };
 
     return (
-        <section id="faq" className="relative py-24 overflow-hidden bg-secondary">
+        <section id="faq" className="relative py-20 overflow-hidden bg-secondary">
 
             <div className="container relative mx-auto px-4 max-w-6xl">
                 <Reveal>

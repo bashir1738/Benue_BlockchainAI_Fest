@@ -9,7 +9,7 @@ export default function KeyHighlights() {
     ];
 
     return (
-        <section id="highlights" className="bg-white py-24 md:py-32 relative overflow-hidden">
+        <section id="highlights" className="bg-white py-20 relative overflow-hidden">
             
             {/* AMBIENT BACKGROUND DECORATION */}
             <div className="absolute top-1/4 -right-20 w-[600px] h-[600px] bg-primary/3 blur-[150px] rounded-full pointer-events-none"></div>

@@ -13,7 +13,7 @@ const partners = [
 
 export default function CommunityPartners() {
     return (
-        <section id="partners" className="bg-white py-24 md:py-32">
+        <section id="partners" className="bg-white py-20">
             <div className="container mx-auto px-4 sm:px-6 w-full max-w-8xl">
                 <Reveal>
                     <div className="flex flex-col items-center text-center mb-16">

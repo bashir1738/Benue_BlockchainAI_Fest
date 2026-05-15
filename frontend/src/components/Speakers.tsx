@@ -63,7 +63,7 @@ export default function Speakers() {
     }, []);
 
     return (
-        <section id="speakers" className="bg-background py-24 md:py-32 relative overflow-hidden">
+        <section id="speakers" className="bg-background py-20 relative overflow-hidden">
             {/* MESH GRID PATTERN */}
             <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-size-[40px_40px] mask-[radial-gradient(ellipse_60%_60%_at_50%_50%,black_40%,transparent_100%)] pointer-events-none"></div>
 

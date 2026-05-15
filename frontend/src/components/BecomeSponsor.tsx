@@ -4,7 +4,7 @@ import { FaWhatsapp } from 'react-icons/fa6';
 
 export default function BecomeSponsor() {
     return (
-        <section id="sponsor" className="pb-24 bg-white ">
+        <section id="sponsor" className="pb-20 bg-white ">
             <div className="container mx-auto px-4 max-w-7xl text-center">
                 <Reveal>
                     <div className="flex flex-col items-center">

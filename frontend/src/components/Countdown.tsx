@@ -9,8 +9,10 @@ interface TimeLeft {
 
 export default function Countdown() {
     const calculateTimeLeft = (): TimeLeft => {
-        // Since dates are TBA, let's keep the difference at 0 to show 00s
-        const difference = 0;
+        // Event starts July 27, 2026 at 00:00 (72-Hour Labs: Monday 27th - Wednesday 29th)
+        const eventDate = new Date('2026-07-27T00:00:00').getTime();
+        const now = new Date().getTime();
+        const difference = eventDate - now;
 
         let timeLeft: TimeLeft = {
             days: 0,

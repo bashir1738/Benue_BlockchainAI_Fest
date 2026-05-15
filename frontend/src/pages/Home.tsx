@@ -12,6 +12,7 @@ import CommunityPartners from '../components/CommunityPartners'
 import FAQ from '../components/FAQ'
 import BecomeSponsor from '../components/BecomeSponsor'
 import Speakers from '../components/Speakers'
+import GovernmentPartners from '../components/GovernmentPartners'
 
 export default function Home() {
     return (
@@ -21,13 +22,13 @@ export default function Home() {
                 <Hero />
                 <Showcase />
                 <CallToAction />
-
                 <EventStructure />
                 <KeyHighlights />
                 <Speakers />
                 <About />
                 <RegistrationCards />
                 <GallerySlider />
+                <GovernmentPartners />
                 <CommunityPartners />
                 <BecomeSponsor />
                 <FAQ />

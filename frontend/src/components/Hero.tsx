@@ -5,7 +5,7 @@ import { FaArrowRight } from 'react-icons/fa'
 
 export default function Hero() {
     return (
-        <section className="relative bg-secondary min-h-[90vh] flex flex-col justify-center overflow-hidden pt-30 pb-24 lg:pt-32 border-t border-white/5">
+        <section className="relative bg-secondary min-h-[90vh] flex flex-col justify-center overflow-hidden pt-20 pb-20 border-t border-white/5">
 
 
             {/* MESH GRID PATTERN */}
@@ -21,7 +21,7 @@ export default function Hero() {
                                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary"></span>
                             </span>
-                            <span className="text-white text-xs md:text-sm font-medium tracking-wider uppercase">Benue, Nigeria • TBA</span>
+                            <span className="text-white text-xs md:text-sm font-medium tracking-wider uppercase">Fr. Alia Conference Center, Makurdi • Benue State</span>
                         </div>
 
                         <h1 className="text-5xl sm:text-6xl  lg:text-[75px] font-bold text-white leading-[1.05] tracking-tighter mb-8 max-w-2xl">

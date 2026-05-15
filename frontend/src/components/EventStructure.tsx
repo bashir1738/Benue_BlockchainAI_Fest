@@ -3,19 +3,19 @@ import Reveal from './Reveal'
 export default function EventStructure() {
     const events = [
         {
-            date: 'TBA',
+            date: 'Monday 27th - Wednesday 29th July',
             title: '72-Hour Hackathon',
             description: "'Dare to Build' - Our flagship hackathon unites 700+ Web3 and AI developers in non-stop innovation. Tackle real-world challenges in DeFi, ReFi, DePINs, RWA tokenisation, NFTs, DAOs, and decentralised AI.",
             highlights: ['72 hours of non-stop building', 'Live mentorship & support', 'Prize pools & pitching']
         },
         {
-            date: 'TBA',
+            date: '30th & 31st July',
             title: 'Conference & Festival',
             description: "The 2-day summit brings together 20+ leading Web3 & AI companies, industry experts, and 700+ builders. Discover cutting-edge products, connect with founders, and explore Africa's most innovative ecosystem.",
             highlights: ['Product exhibitions & demos', 'Fireside chats & keynotes', 'Technical workshops']
         },
         {
-            date: 'TBA',
+            date: 'August Onwards',
             title: 'Post-Festival Bootcamps',
             description: "Continuing our commitment to skill development with intensive bootcamps focused on Blockchain development, AI engineering, and technical entrepreneurship to turn inspiration into practical skills.",
             highlights: ['Specialized developer tracks', 'Industry certifications', 'Startup incubation']
@@ -23,7 +23,7 @@ export default function EventStructure() {
     ];
 
     return (
-        <section id="expect" className="bg-background py-24 md:py-32 relative overflow-hidden">
+        <section id="expect" className="bg-background py-20 relative overflow-hidden">
             
         
             <div className="container mx-auto px-4 sm:px-6 lg:px-12 w-full max-w-8xl relative z-10">

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 export default function CallToAction() {
     return (
-        <section className="bg-gray-50 py-24 md:py-32 xl:py-40">
+        <section className="bg-gray-50 py-20">
             <div className="container mx-auto px-4 sm:px-6 lg:px-12 w-full max-w-8xl">
 
                 {/* HEADER SECTION */}

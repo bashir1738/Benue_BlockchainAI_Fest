@@ -4,7 +4,7 @@ import { FaArrowRight } from 'react-icons/fa'
 
 export default function RegistrationCards() {
     return (
-        <section className="bg-white py-24 md:py-32 ">
+        <section className="bg-white py-20 ">
             <div className="container mx-auto px-4 sm:px-6 lg:px-12 w-full max-w-8xl">
 
                 {/* HEADER SECTION */}

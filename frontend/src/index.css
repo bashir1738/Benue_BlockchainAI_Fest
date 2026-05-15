@@ -1,42 +1,9 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap');
-
-@font-face {
-  font-family: 'Nocturne Kraft';
-  src: url('/fonts/nocturne_kraft/Nocturne Kraft.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Heuvel Grotesk';
-  src: url('/fonts/heuvel_grotesk/HeuvelGroteskDEMO-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-  unicode-range: U+0000-002F, U+003A-10FFFF;
-}
-
-@font-face {
-  font-family: 'Heuvel Grotesk';
-  src: url('/fonts/heuvel_grotesk/HeuvelGroteskDEMO-Bold.ttf') format('truetype');
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-  unicode-range: U+0000-002F, U+003A-10FFFF;
-}
-
-@layer base {
-  h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-primary);
-  }
-}
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100;200;300;400;500;600;700;800;900&family=Geist+Mono:wght@400;500;600;700&display=swap');
 
 @theme {
-  --font-primary: 'Nocturne Kraft', sans-serif;
-  --font-secondary: 'Heuvel Grotesk', 'Space Grotesk', sans-serif;
-  --font-sans: 'Heuvel Grotesk', 'Space Grotesk', sans-serif;
+  --font-sans: 'Geist', sans-serif;
+  --font-mono: 'Geist Mono', monospace;
   
   --color-primary: #00d2ff;
   --color-secondary: #0a1128;

@@ -1,71 +1,109 @@
-import { FaXTwitter, FaFacebookF, FaYoutube, FaTelegram } from 'react-icons/fa6'
+import { FaXTwitter, FaFacebookF, FaYoutube, FaTelegram, FaLocationDot, FaEnvelope, FaPhone } from 'react-icons/fa6'
 import { Link } from 'react-router-dom'
 
 export default function Footer() {
+    const currentYear = new Date().getFullYear()
+
+    const socialLinks = [
+        { icon: FaTelegram, href: 'https://t.me/BenueBlockchainAI', label: 'Telegram' },
+        { icon: FaXTwitter, href: 'https://x.com/BBAIFestival', label: 'Twitter' },
+        { icon: FaFacebookF, href: 'https://www.facebook.com/share/1B26MYg4WD/', label: 'Facebook' },
+        { icon: FaYoutube, href: 'https://youtube.com/@bbaifestival', label: 'YouTube' },
+    ]
+
     return (
-        <footer className="bg-secondary pt-24 pb-12 mt-auto border-t border-white/5 relative overflow-hidden">
-
-            <div className="container mx-auto px-4 sm:px-6 lg:px-12 w-full max-w-8xl relative z-10">
-
-                {/* TOP HEADER / BRANDING BLOCK */}
-                <div className="flex flex-col md:flex-row justify-between items-center md:items-end mb-20 gap-10">
-                    <div className="flex flex-col items-center md:items-start md:text-left text-center">
-                        <img src="/logo3.png" alt="Logo" className="w-24 h-20 mb-5" />
-                        <p className="text-white/60 text-lg font-light leading-relaxed max-w-md">
-                            Join us at the inaugural Benue Blockchain AI Fest. Building the next billion users through groundbreaking technology.
+        <footer className="bg-secondary/50 backdrop-blur-sm  mt-auto">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-12 w-full max-w-8xl py-16">
+                
+                <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-12 md:gap-8 mb-12">
+                    
+                    {/* BRAND SECTION */}
+                    <div className="col-span-1 lg:col-span-2">
+                        <img src="/logo3.png" alt="Logo" className="w-20 h-16 mb-6" />
+                        <p className="text-white/70 text-sm leading-relaxed">
+                            The inaugural Benue Blockchain AI Fest—building the next billion users through Web3 and AI innovation.
                         </p>
                     </div>
 
-                    {/* SOCIALS */}
-                    <div className="flex items-center gap-4">
-                        <a
-                            href="https://t.me/BenueBlockchainAI"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white/50 hover:border-primary hover:text-primary hover:bg-primary/10 transition-all duration-300"
-                        >
-                            <FaTelegram className="text-lg" />
-                        </a>
-                        <a
-                            href="https://x.com/BBAIFestival"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white/50 hover:border-primary hover:text-primary hover:bg-primary/10 transition-all duration-300"
-                        >
-                            <FaXTwitter className="text-lg" />
-                        </a>
-                        <a
-                            href="https://www.facebook.com/share/1B26MYg4WD/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white/50 hover:border-primary hover:text-primary hover:bg-primary/10 transition-all duration-300"
-                        >
-                            <FaFacebookF className="text-lg" />
-                        </a>
-                        <a
-                            href="https://youtube.com/@bbaifestival"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white/50 hover:border-primary hover:text-primary hover:bg-primary/10 transition-all duration-300"
-                        >
-                            <FaYoutube className="text-lg" />
-                        </a>
+                    {/* QUICK LINKS */}
+                    <div>
+                        <h4 className="text-white font-semibold text-sm mb-5 uppercase tracking-wide">Links</h4>
+                        <nav className="space-y-3">
+                            <Link to="/" className="text-white/60 hover:text-primary text-sm transition-colors">Home</Link>
+                            <Link to="/register" className="text-white/60 hover:text-primary text-sm transition-colors block">Register</Link>
+                            <Link to="/apply" className="text-white/60 hover:text-primary text-sm transition-colors block">Apply Speaker</Link>
+                        </nav>
                     </div>
+
+                    {/* EVENT INFO */}
+                    <div>
+                        <h4 className="text-white font-semibold text-sm mb-5 uppercase tracking-wide">Event</h4>
+                        <div className="space-y-4 text-sm">
+                            <div>
+                                <p className="text-primary/80 text-xs font-medium mb-1">Labs</p>
+                                <p className="text-white/60">July 27-29</p>
+                            </div>
+                            <div>
+                                <p className="text-primary/80 text-xs font-medium mb-1">Conference</p>
+                                <p className="text-white/60">July 30-31</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* CONTACT */}
+                    <div>
+                        <h4 className="text-white font-semibold text-sm mb-5 uppercase tracking-wide">Contact</h4>
+                        <div className="space-y-3 text-sm">
+                            <a href="mailto:info@bbaifest.com" className="text-white/60 hover:text-primary transition-colors flex items-start gap-2">
+                                <FaEnvelope className="text-primary/60 mt-0.5 flex-shrink-0" />
+                                <span>partnerships@benueblockchainfest.com</span>
+                            </a>
+                            <a href="tel:+2348030000000" className="text-white/60 hover:text-primary transition-colors flex items-start gap-2">
+                                <FaPhone className="text-primary/60 mt-0.5 flex-shrink-0" />
+                                <span>+234 803 000 0000</span>
+                            </a>
+                            <div className="text-white/60 flex items-start gap-2">
+                                <FaLocationDot className="text-primary/60 mt-0.5 flex-shrink-0" />
+                                <span className="text-xs">Fr. Alia Conference<br />Makurdi, Benue</span>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
-                {/* BOTTOM LINKS & COPYRIGHT */}
-                <div className="flex flex-col md:flex-row justify-between items-center md:items-end text-center md:text-left pt-8 border-t border-white/10 gap-6">
-                    <p className="text-white/40 text-sm font-light">
-                        © {new Date().getFullYear()} Benue Blockchain AI Fest. All rights reserved.
+                {/* DIVIDER */}
+                <div className="border-t border-white/5 pt-8 mb-8"></div>
+
+                {/* BOTTOM */}
+                <div className="flex flex-col sm:flex-row justify-between items-center gap-6">
+                    <p className="text-white/50 text-xs">
+                        © {currentYear} Benue Blockchain AI Fest. All rights reserved.
                     </p>
-                    <div className="flex items-center gap-6">
-                        <a href="/#about" className="text-white/40 hover:text-primary text-sm font-medium transition-colors">About</a>
-                        <a href="/#sponsor" className="text-white/40 hover:text-primary text-sm font-medium transition-colors">Sponsor</a>
-                        <Link to="/register" className="text-white/40 hover:text-primary text-sm font-medium transition-colors">Register</Link>
+                    
+                    {/* SOCIALS */}
+                    <div className="flex items-center gap-4">
+                        {socialLinks.map((social, i) => {
+                            const Icon = social.icon
+                            return (
+                                <a
+                                    key={i}
+                                    href={social.href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/40 hover:text-white hover:border-primary hover:bg-primary/5 transition-all duration-300"
+                                    title={social.label}
+                                >
+                                    <Icon className="text-sm" />
+                                </a>
+                            )
+                        })}
                     </div>
+
+                 
                 </div>
 
             </div>
         </footer>
     )
 }
+ 
