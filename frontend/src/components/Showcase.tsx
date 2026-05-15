@@ -14,7 +14,7 @@ export default function Showcase() {
     useEffect(() => {
         const interval = setInterval(() => {
             setActiveIndex((prev) => (prev + 1) % STATS_DATA.length);
-        }, 2000);
+        }, 1000);
         return () => clearInterval(interval);
     }, []);
 
