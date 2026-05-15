@@ -8,6 +8,12 @@ const speakers = [
         company: 'Benue State',
         photo: '/Governor Hyacinth Alia .jpg'
     },
+        {
+        name: 'Barr. Dr. Sam Ode',
+        role: 'Deputy Governor',
+        company: 'Benue State',
+        photo: '/Deputy Gov Dr Sam Ode.jpg.jpeg'
+    },
     {
         name: 'Hon. James Dwem',
         role: 'Commissioner of Science and Technology',
@@ -20,12 +26,7 @@ const speakers = [
         company: 'DG, BICD',
         photo: '/Mr. Leo-Angelo Viashima.jpeg'
     },
-    {
-        name: 'Barr. Dr. Sam Ode',
-        role: 'Deputy Governor',
-        company: 'Benue State',
-        photo: '/Deputy Gov Dr Sam Ode.jpg.jpeg'
-    },
+
     {
         name: 'Barr. Ori Adam-Onum',
         role: 'Legal & Compliance',
@@ -47,7 +48,7 @@ const speakers = [
     {
         name: 'Hon. Terwase Gbande-Hembaor',
         role: 'Director General/CEO',
-        company: 'Benue Digital Infrastructure Company (BDIC)',
+        company: 'Benue Digital Infrastructure Company',
         photo: '/Hon. Terwase Gbande-Hembaor.jpeg'
     }
 ];
