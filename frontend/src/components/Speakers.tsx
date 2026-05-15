@@ -97,8 +97,8 @@ export default function Speakers() {
                                 </div>
                                 
                                 <div className="p-6 bg-background relative z-20 grow flex flex-col">
-                                    <p className="text-lg  font-bold text-white mb-3 transition-colors">{speaker.name}</p>
-                                    <div className="flex flex-col gap-1 mt-auto">
+                                    <p className="text-sm md:text-lg font-bold text-white mb-0 md:mb-3 transition-colors line-clamp-1">{speaker.name}</p>
+                                    <div className="flex flex-col gap-0 md:gap-1 mt-auto">
                                         <span className="text-primary font-medium text-xs sm:text-sm tracking-wide uppercase">{speaker.role}</span>
                                         <span className="text-gray-400 font-light text-sm sm:text-base">{speaker.company}</span>
                                     </div>
