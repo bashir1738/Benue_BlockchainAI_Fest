@@ -26,6 +26,18 @@ const speakers = [
         company: 'DG, BICD',
         photo: '/Mr. Leo-Angelo Viashima.jpeg'
     },
+    {
+        name: 'Barr. Ori Adam-Onum',
+        role: 'Legal & Compliance',
+        company: 'Benue Blockchain AI Fest',
+        photo: '/Barr. Ori Adam-Onum.jpeg'
+    },
+      {
+        name: 'Adaaku Peter Sesugh',
+        role: 'Co-founder/CEO Blockfuse Labs',
+        company: 'Blockfuse Labs',
+        photo: '/scarface.jpeg'
+    },
     // {
     //     name: 'Hon. Kwaghgba Amande',
     //     role: 'Hon. Commissioner for Communications, Innovation, and Digital Economy',
@@ -33,24 +45,11 @@ const speakers = [
     //     photo: '/Hon. Kwaghgba Amande.png'
     // },
     {
-        name: ' Hon. Terwase Gbande-Hembaor (also referred to as Gbande Hembaor Terwase)',
+        name: 'Hon. Terwase Gbande-Hembaor',
         role: 'Director General/CEO',
         company: 'Benue Digital Infrastructure Company (BDIC)',
         photo: '/Hon. Terwase Gbande-Hembaor.jpeg'
-    },
-    {
-        name: 'Adaaku Peter Sesugh',
-        role: 'Co-founder/CEO Blockfuse Labs',
-        company: 'Blockfuse Labs',
-        photo: '/scarface.jpeg'
-    },
-    {
-        name: 'Barr. Ori Adam-Onum',
-        role: 'Legal & Compliance',
-        company: 'Benue Blockchain AI Fest',
-        photo: '/Barr. Ori Adam-Onum.jpeg'
-    }
-    
+    }   
 ];
 
 export default function Speakers() {
