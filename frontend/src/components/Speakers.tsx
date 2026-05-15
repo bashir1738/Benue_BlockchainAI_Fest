@@ -9,6 +9,12 @@ const speakers = [
         photo: '/Governor Hyacinth Alia .jpg'
     },
     {
+        name: 'Barr. Dr. Sam Ode',
+        role: 'Deputy Governor',
+        company: 'Benue State',
+        photo: '/Deputy Gov Dr Sam Ode.jpg.jpeg'
+    },
+    {
         name: 'Hon. James Dwem',
         role: 'Commissioner of Science and Technology',
         company: 'Benue State',
@@ -20,19 +26,12 @@ const speakers = [
         company: 'DG, BICD',
         photo: '/Mr. Leo-Angelo Viashima.jpeg'
     },
-    {
-        name: 'Barr. Dr. Sam Ode',
-        role: 'Deputy Governor',
-        company: 'Benue State',
-        photo: '/Deputy Gov Dr Sam Ode.jpg.jpeg'
-    },
-
-    {
-        name: 'Hon. Kwaghgba Amande',
-        role: 'Hon. Commissioner for Communications, Innovation, and Digital Economy',
-        company: 'Benue State',
-        photo: '/Hon. Kwaghgba Amande.png'
-    },
+    // {
+    //     name: 'Hon. Kwaghgba Amande',
+    //     role: 'Hon. Commissioner for Communications, Innovation, and Digital Economy',
+    //     company: 'Benue State',
+    //     photo: '/Hon. Kwaghgba Amande.png'
+    // },
     {
         name: ' Hon. Terwase Gbande-Hembaor (also referred to as Gbande Hembaor Terwase)',
         role: 'Director General/CEO',
