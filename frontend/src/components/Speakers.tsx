@@ -104,7 +104,7 @@ export default function Speakers() {
                                     </div>
                                 </div>
                             </div>
-                        );
+                        ); 
 
                         return isMobile ? (
                             <div key={i} className="shrink-0 w-[80vw] sm:w-[50vw] md:w-auto snap-center flex flex-col">
