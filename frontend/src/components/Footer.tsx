@@ -15,10 +15,10 @@ export default function Footer() {
         <footer className="bg-secondary backdrop-blur-sm mt-auto">
             <div className="container mx-auto px-4 sm:px-6 lg:px-12 w-full max-w-8xl py-16">
                 
-                <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-12 md:gap-8 mb-12">
+                <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-12 md:gap-8 mb-12 text-center md:text-left">
                     
                     {/* BRAND SECTION */}
-                    <div className="col-span-1 lg:col-span-2">
+                    <div className="col-span-1 lg:col-span-2 flex flex-col items-center md:items-start">
                         <img src="/logo3.png" alt="Logo" className="w-20 h-16 mb-6" />
                         <p className="text-white/70 text-sm leading-relaxed">
                             The inaugural Benue Blockchain AI Fest—building the next billion users through Web3 and AI innovation.
@@ -51,19 +51,19 @@ export default function Footer() {
                     </div>
 
                     {/* CONTACT */}
-                    <div>
+                    <div className="text-center md:text-left">
                         <h4 className="text-white font-semibold text-sm mb-5 uppercase tracking-wide">Contact</h4>
-                        <div className="space-y-3 text-sm">
-                            <a href="mailto:info@bbaifest.com" className="text-white/60 hover:text-primary transition-colors flex items-start gap-2">
-                                <FaEnvelope className="text-primary/60 mt-0.5 flex-shrink-0" />
+                        <div className="space-y-3 text-sm flex flex-col items-center md:items-start">
+                            <a href="mailto:info@bbaifest.com" className="text-white/60 hover:text-primary transition-colors flex items-center gap-2">
+                                <FaEnvelope className="text-primary/60 flex-shrink-0" />
                                 <span>partnerships@benueblockchainfest.com</span>
                             </a>
-                            <a href="tel:+2348030000000" className="text-white/60 hover:text-primary transition-colors flex items-start gap-2">
-                                <FaPhone className="text-primary/60 mt-0.5 flex-shrink-0" />
+                            <a href="tel:+2348030000000" className="text-white/60 hover:text-primary transition-colors flex items-center gap-2">
+                                <FaPhone className="text-primary/60 flex-shrink-0" />
                                 <span>+234 803 000 0000</span>
                             </a>
-                            <div className="text-white/60 flex items-start gap-2">
-                                <FaLocationDot className="text-primary/60 mt-0.5 flex-shrink-0" />
+                            <div className="text-white/60 flex items-center gap-2">
+                                <FaLocationDot className="text-primary/60 flex-shrink-0" />
                                 <span className="text-xs">Fr. Alia Conference<br />Makurdi, Benue</span>
                             </div>
                         </div>
@@ -75,7 +75,7 @@ export default function Footer() {
                 <div className="border-t border-white/5 pt-8 mb-8"></div>
 
                 {/* BOTTOM */}
-                <div className="flex flex-col sm:flex-row justify-between items-center gap-6">
+                <div className="flex flex-col sm:flex-row justify-between items-center gap-6 text-center sm:text-left">
                     <p className="text-white/50 text-xs">
                         © {currentYear} Benue Blockchain AI Fest. All rights reserved.
                     </p>
