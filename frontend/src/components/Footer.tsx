@@ -1,11 +1,12 @@
-import { FaXTwitter, FaFacebookF, FaYoutube, FaTelegram, FaLocationDot, FaEnvelope, FaPhone } from 'react-icons/fa6'
+import { FaWhatsapp } from 'react-icons/fa'
+import { FaXTwitter, FaFacebookF, FaYoutube, FaLocationDot, FaEnvelope, FaPhone } from 'react-icons/fa6'
 import { Link } from 'react-router-dom'
 
 export default function Footer() {
     const currentYear = new Date().getFullYear()
 
     const socialLinks = [
-        { icon: FaTelegram, href: 'https://t.me/BenueBlockchainAI', label: 'Telegram' },
+        { icon: FaWhatsapp, href: 'https://chat.whatsapp.com/K0RNdkd6FPJEAEKaHTHUQ7', label: 'WhatsApp' },
         { icon: FaXTwitter, href: 'https://x.com/BBAIFestival', label: 'Twitter' },
         { icon: FaFacebookF, href: 'https://www.facebook.com/share/1B26MYg4WD/', label: 'Facebook' },
         { icon: FaYoutube, href: 'https://youtube.com/@bbaifestival', label: 'YouTube' },
@@ -58,9 +59,9 @@ export default function Footer() {
                                 <FaEnvelope className="text-primary/60 flex-shrink-0" />
                                 <span>partnerships@benueblockchainfest.com</span>
                             </a>
-                            <a href="tel:+2348030000000" className="text-white/60 hover:text-primary transition-colors flex items-center gap-2">
+                            <a href="tel:+2348021192934" className="text-white/60 hover:text-primary transition-colors flex items-center gap-2">
                                 <FaPhone className="text-primary/60 flex-shrink-0" />
-                                <span>+234 803 000 0000</span>
+                                <span>+234 802 119 2934</span>
                             </a>
                             <div className="text-white/60 flex items-center gap-2">
                                 <FaLocationDot className="text-primary/60 flex-shrink-0" />
