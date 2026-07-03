@@ -67,6 +67,12 @@ const speakers = [
         role: 'Director General/CEO',
         company: 'Benue Digital Infrastructure Company',
         photo: '/hon-terwase-gbande-hembaor.webp'
+    },
+    {
+        name: 'Dr. Philip Teryima, MD',
+        role: 'CEO, Tractoria Inc & CMD, St Philip Neri Group of Hospital',
+        company: 'Blockchain & AI Business Development',
+        photo: '/Dr Philip Teryima,MD.jpeg'
     }
 ];
 
